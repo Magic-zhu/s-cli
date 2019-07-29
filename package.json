@@ -1,0 +1,26 @@
+{
+  "name": "s-cli",
+  "version": "1.0.0",
+  "description": "a simple cli ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Magic-zhu/s-cli.git"
+  },
+  "keywords": [
+    "cli",
+    "vue"
+  ],
+  "author": "magic-zhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Magic-zhu/s-cli/issues"
+  },
+  "homepage": "https://github.com/Magic-zhu/s-cli#readme",
+  "dependencies": {
+    "commander": "^2.20.0"
+  }
+}
