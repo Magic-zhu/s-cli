@@ -27,7 +27,7 @@ inquirer
         }
     ])
     .then(answers => {
-        var commit_message = answers.commit;
+        var commit_message = answers.commit+':'+ answers.message;
         var commitResult = child.execSync("git commit -am  " + commit_message ).toString();
         console.log(chalk.blue("push中......"));
         var pushResult = child.execSync("git push ").toString();
