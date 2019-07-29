@@ -1,0 +1,18 @@
+#!/usr/bin/env node --harmony
+const cmd = require('commander')
+cmd
+    .version ('1.0.0')
+cmd
+    .usage('<command>')
+cmd
+        .command('init')
+        .description('选择模板 初始化项目')
+        .alias("i")
+        .action(()=>{
+            require('../command/init')()
+        })
+
+        cmd.parse(process.argv)
+        if(!cmd.args.length){
+          cmd.help()
+        }        
