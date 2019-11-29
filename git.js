@@ -13,7 +13,6 @@ inquirer
             choices: [
                 "feat",
                 "fix",
-                "update",
                 "docs",
                 "style",
                 "refactor",

@@ -1,0 +1,49 @@
+#!/usr/bin/env node --harmony
+process.env.NODE_PATH = __dirname + '/../node_modules/'
+const cmd = require('commander')
+const chalk = require('chalk')
+cmd
+    .version('1.0.0')
+    .option("-t, --template <number>", "指定模板编号")
+cmd
+    .usage('<command>')
+cmd
+    .command('init')
+    .description('选择模板 初始化项目')
+    .alias("i")
+    .action(() => {
+        require('../command/init')()
+    })
+cmd
+    .command('plugin')
+    .description('选择需要克隆的插件或者组件')
+    .alias('p')
+    .option("--path <path>", '指定路径')
+    .option("--list")
+    .action((e) => {
+        let type = 'normal';
+        let arg = null;
+        if (e.list) {
+            type = 'list'
+        }
+        if (e.path) {
+            type = 'path',
+            arg = e.path
+        }
+        require('../command/plugin')(type, arg)
+    })
+cmd
+    .command('test')
+    .description("用来测试的")
+    .action(() => {
+        require('../command/test')()
+    })
+cmd
+    .command('*')
+    .action(function (env) {
+        console.log(chalk.red('无效命令'));
+    });
+cmd.parse(process.argv)
+if (cmd.template != undefined) {
+    console.log(chalk.blue(cmd.template))
+}

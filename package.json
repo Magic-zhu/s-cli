@@ -23,9 +23,10 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
-    "inquirer": "^6.5.0"
+    "inquirer": "^6.5.0",
+    "ora": "^4.0.3"
   },
   "bin": {
-    "sc": "bin/sc"
+    "ares": "bin/ares"
   }
 }
