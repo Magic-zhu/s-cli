@@ -8,11 +8,11 @@ cmd
 cmd
     .usage('<command>')
 cmd
-    .command('init')
+    .command('init <name>')
     .description('选择模板 初始化项目')
     .alias("i")
-    .action(() => {
-        require('../command/init')()
+    .action((name) => {
+        require('../command/init')(name)
     })
 cmd
     .command('plugin')

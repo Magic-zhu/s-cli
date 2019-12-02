@@ -1,56 +1,74 @@
-var child = require('child_process');
-// var path =  require('path'); 
-var chalk = require('chalk');
-var inquirer = require('inquirer');
-var spinner = require('ora')();
-let templates = require('../template/template.json');
-module.exports = function(){
+const child = require('child_process');
+const path =  require('path');
+const chalk = require('chalk');
+const inquirer = require('inquirer');
+const spinner = require('ora')();
+const templates = require('../template/template.json');
+const fs = require('fs');
+module.exports = function (name) {
     let answerList = [];
     inquirer.prompt([
         {
-            type:'list',
-            name:'template',
-            message:"请选择模板?",
+            type: 'list',
+            name: 'template',
+            message: "请选择模板?",
             choices: templates
         }
-    ]).then(answers=>{
+    ]).then(answers => {
         let index = parseInt(answers.template);
-        spinner.color = 'blue';
-        spinner.text = "正在下载请稍等";
-        // spinner.start();
-        child.exec(`cd ${'aaaa' } &&  npm install`,function(err,stdout){
-            console.log(chalk.red(stdout));
-        });
-        child.exec(`cd ${'/aaaa' } &&  npm start`,function(err,stdout){
-            console.log(chalk.red(stdout));
-        });
-        // child.exec(`git clone ${templates[index].git} aaaa`,function(err){
-        //     if(err){
-        //         console.log(chalk.red(err));
-        //     }else{
-        //         spinner.succeed(chalk.green('下载完成'));
-        //     }
-        //     child.execSync("ls");
-        // })
-        // let questions = [];
-        // switch(answers.template.split("-")[0]){
-        //     case "001":
-        //         questions = [
-        //             {
-        //                 type:'list',
-        //                 name:'001-css',
-        //                 message:"请选择css预处理器?",
-        //                 choices: [
-        //                     "less",
-        //                     "scss",
-        //                     "stylus",
-        //                 ]
-        //             },
-        //         ];
-        //         break    
-        // }
-        // return inquirer.prompt(questions)
-    }).then(answers=>{
-        // console.log(chalk.red(answers))
+        console.log(index)
+        switch (index) {
+            case 3:
+                loadTemplate(index, name)
+                break
+            case 4:
+                let questions = [
+                    {
+                        type: 'checkbox',
+                        name: 'D2AdminPlugins',
+                        message: "请选择需要用到的插件?",
+                        choices: [
+                            "表格导出",
+                            "表格导入",
+                            "时间日期过滤器",
+                            ""
+                        ]
+                    },
+                ];
+                ;
+                return inquirer.prompt(questions)
+        }
+
+    }).then(answers => {
+
+    })
+}
+
+function loadTemplate(index, name) {
+    spinner.color = 'blue';
+    spinner.text = "正在下载请稍等";
+    spinner.start();
+    child.exec(`git clone ${templates[index].git} ${name}`, function (err) {
+        if (err) {
+            console.log(chalk.red(err));
+        } else {
+            spinner.succeed(chalk.green('下载完成'));
+            spinner.info(chalk.blue("开始安装依赖"));
+            child.exec(`cd ${'aaaa'} &&  npm install`, function (err, stdout) {
+                if (err) {
+                    console.log(chalk.red(err))
+                } else {
+                    spinner.succeed(chalk.green('安装完成'));
+                    child.exec(`cd ${'aaaa'} &&  npm start`, function (err, stdout) {
+                        if (err) {
+                            console.log(chalk.red(err))
+                        } else {
+                            console.log(stdout)
+                            spinner.succeed(chalk.green('项目启动完成'))
+                        }
+                    });
+                }
+            });
+        }
     })
 }

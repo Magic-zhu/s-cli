@@ -1,16 +1,16 @@
 [
     {
-        "name":"Vue纯净模板",
+        "name":"Vue极速模板-非官方脚手架版",
         "value":"0",
         "git":""
     },
     {
-        "name":"Vue移动端集成方案(不含状态管理vuex)",
+        "name":"Vue移动端集成方案(不含状态管理vuex)-官方脚手架版",
         "value":"1",
         "git":""
     },
     {
-        "name":"Vue移动端集成方案(含状态管理vuex)",
+        "name":"Vue移动端集成方案(含状态管理vuex)-官方脚手架版",
         "value":"2",
         "git":""
     },
