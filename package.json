@@ -1,7 +1,7 @@
 {
-  "name": "s-cli",
+  "name": "@magic-zhu/ares",
   "version": "1.0.0",
-  "description": "a simple cli ",
+  "description": "a simple cli",
   "main": "index.js",
   "scripts": {
     "start": ""
@@ -12,7 +12,7 @@
   },
   "keywords": [
     "cli",
-    "vue"
+    "d2admin"
   ],
   "author": "magic-zhu",
   "license": "ISC",

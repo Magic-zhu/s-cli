@@ -2,8 +2,10 @@
 process.env.NODE_PATH = __dirname + '/../node_modules/'
 const cmd = require('commander')
 const chalk = require('chalk')
+const fs = require('fs')
+const spinner = require('ora')();
 cmd
-    .version('1.0.0')
+    .version('1.0.1')
     .option("-t, --template <number>", "指定模板编号")
 cmd
     .usage('<command>')
@@ -41,13 +43,16 @@ cmd
         require('../command/plugin')(type, arg)
     })
 cmd
-    .command('test')
-    .description("用来测试的")
-    .action(() => {
-        require('../command/test')()
+    .command('d2')
+    .description("D2Admin相关的脚手架命令")
+    .option("-a,--add <name>",'增加一个页面')
+    .action((e)=>{
+        if(e.add){
+            require('../command/D2/add')(e.add)
+        }
     })
 cmd
-    .command('*')
+    .command('*',"无效")
     .action(function (env) {
         console.log(chalk.red('无效命令'));
     });

@@ -22,7 +22,7 @@
     {
         "name":"D2admin基础模板(选配D2插件)",
         "value":"4",
-        "git":""
+        "git":"https://gitee.com/fairyever/d2-admin-start-kit.git"
     },
     {
         "name":"D2admin完整模板(包括使用示例)",
