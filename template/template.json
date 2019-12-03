@@ -5,12 +5,12 @@
         "git":""
     },
     {
-        "name":"Vue移动端集成方案(不含状态管理vuex)-官方脚手架版",
+        "name":"Vue移动端集成方案-官方脚手架版",
         "value":"1",
         "git":""
     },
     {
-        "name":"Vue移动端集成方案(含状态管理vuex)-官方脚手架版",
+        "name":"Vue/PWA集成方案-官方脚手架版",
         "value":"2",
         "git":""
     },
@@ -27,6 +27,6 @@
     {
         "name":"D2admin完整模板(包括使用示例)",
         "value":"5",
-        "git":""
+        "git":"https://gitee.com/fairyever/d2-admin.git"
     }
 ]

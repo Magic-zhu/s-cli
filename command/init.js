@@ -18,7 +18,7 @@ module.exports = function (name) {
         let index = parseInt(answers.template);
         console.log(index)
         switch (index) {
-            case 3:
+            case 3,5:
                 loadTemplate(index, name)
                 break
             case 4:
@@ -46,25 +46,30 @@ module.exports = function (name) {
 
 function loadTemplate(index, name) {
     spinner.color = 'blue';
-    spinner.text = "正在下载请稍等";
+    spinner.text = "正在下载,请稍等";
     spinner.start();
     child.exec(`git clone ${templates[index].git} ${name}`, function (err) {
         if (err) {
             console.log(chalk.red(err));
         } else {
-            spinner.succeed(chalk.green('下载完成'));
-            spinner.info(chalk.blue("开始安装依赖"));
-            child.exec(`cd ${'aaaa'} &&  npm install`, function (err, stdout) {
+            spinner.succeed('下载完成');
+            spinner.info("开始安装依赖");
+            spinner.color = 'blue';
+            spinner.text = "安装中,请稍等";
+            spinner.start();
+            child.exec(`cd ${name} &&  npm install`, function (err, stdout) {
                 if (err) {
                     console.log(chalk.red(err))
                 } else {
-                    spinner.succeed(chalk.green('安装完成'));
-                    child.exec(`cd ${'aaaa'} &&  npm start`, function (err, stdout) {
+                    spinner.succeed('安装完成');
+                    spinner.info(chalk.yellow("项目启动中..."))
+                    child.exec(`cd ${name} &&  npm start`, function (err, stdout) {
                         if (err) {
                             console.log(chalk.red(err))
+                            spinner.fail('安装失败,请手动安装依赖');
                         } else {
                             console.log(stdout)
-                            spinner.succeed(chalk.green('项目启动完成'))
+                            spinner.succeed('项目启动完成')
                         }
                     });
                 }

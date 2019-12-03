@@ -10,12 +10,6 @@ cmd
 cmd
     .usage('<command>')
 cmd
-    .command('start <path>')
-    .description('启动项目')
-    .action((path) => {
-        require('../command/start')(path)
-    })
-cmd
     .command('build <path>')
 cmd
     .command('init <name>')
