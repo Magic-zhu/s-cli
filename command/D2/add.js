@@ -12,19 +12,24 @@ module.exports = function (name) {
         name: 'path',
         message: "指定页面路径(默认为'views/xxxx')"
     }]).then(answers => {
-        // spinner.start(chalk.blue("开始生成文件"));
-        nunjucks.renderString('hahah {{name}}',{name},function(err,res){
+        spinner.start(chalk.blue("开始生成文件"));
+        nunjucks.configure("/templates/D2Admin/");
+        console.log(path.resolve("../../templates/D2Admin/"))
+        nunjucks.render("newPage.njk",{name},function(err,res){
             if(err) console.log(chalk.red(err));
-            else console.log(res);
+            else {
+                console.log(res)
+                // let PATH_TEMP = answers.path==''?`./src/views/${name}.vue`:`./src/views/${answers.path}/${name}.vue`;
+                // fs.writeFile(path.resolve(PATH_TEMP), template, 'utf8', (err,data)=>{
+                //     if(err){
+                //         console.log(err)
+                //         spinner.fail("创建失败");
+                //         return
+                //     }
+                //     spinner.succeed("创建成功");
+                // })
+            }
         })
-        // let PATH_TEMP = answers.path==''?`./src/views/${name}.vue`:`./src/views/${answers.path}/${name}.vue`;
-        // fs.writeFile(path.resolve(PATH_TEMP), template, 'utf8', (err,data)=>{
-        //     if(err){
-        //         console.log(err)
-        //         spinner.fail("创建失败");
-        //         return
-        //     }
-        //     spinner.succeed("创建成功");
-        // })
+
     })
 }
