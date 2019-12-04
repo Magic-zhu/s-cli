@@ -37,12 +37,14 @@ cmd
         require('../command/plugin')(type, arg)
     })
 cmd
-    .command('d2')
+    .command('d2 <cmd> [arg]')
     .description("D2Admin相关的脚手架命令")
-    .option("-a,--add <name>",'增加一个页面')
-    .action((e)=>{
-        if(e.add){
-            require('../command/D2/add')(e.add)
+    .action((e,arg)=>{
+        if(e=='add'){
+            require('../command/D2/add')(arg)
+        }
+        if(e=='create'){
+            console.log(e,arg)
         }
     })
 cmd
