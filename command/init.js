@@ -1,9 +1,9 @@
 const child = require('child_process');
-const path =  require('path');
+const path = require('path');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
 const spinner = require('ora')();
-const templates = require('../template/template.json');
+const templates = require('../config/template.json');
 const fs = require('fs');
 module.exports = function (name) {
     let answerList = [];
@@ -16,9 +16,9 @@ module.exports = function (name) {
         }
     ]).then(answers => {
         let index = parseInt(answers.template);
-        console.log(index)
+        // console.log(index,name)
         switch (index) {
-            case 3,5:
+            case 3:
                 loadTemplate(index, name)
                 break
             case 4:
@@ -37,6 +37,9 @@ module.exports = function (name) {
                 ];
                 ;
                 return inquirer.prompt(questions)
+            case 5:
+                loadTemplate(index, name)
+                break
         }
 
     }).then(answers => {
@@ -59,14 +62,15 @@ function loadTemplate(index, name) {
             spinner.start();
             child.exec(`cd ${name} &&  npm install`, function (err, stdout) {
                 if (err) {
-                    console.log(chalk.red(err))
+                    console.log(chalk.red(err));
+                    spinner.fail('安装失败,请手动安装依赖');
                 } else {
                     spinner.succeed('安装完成');
                     spinner.info(chalk.yellow("项目启动中..."))
-                    child.exec(`cd ${name} &&  npm start`, function (err, stdout) {
+                    child.exec(`npm start`, function (err, stdout) {
                         if (err) {
-                            console.log(chalk.red(err))
-                            spinner.fail('安装失败,请手动安装依赖');
+                            console.log(err)
+                            spinner.fail('启动失败,请手动启动项目');
                         } else {
                             console.log(stdout)
                             spinner.succeed('项目启动完成')

@@ -39,11 +39,12 @@ cmd
 cmd
     .command('d2 <cmd> [arg]')
     .description("D2Admin相关的脚手架命令")
-    .action((e,arg)=>{
-        if(e=='add'){
-            require('../command/D2/add')(arg)
+    .option("--reg","自动注册路由")
+    .action((type,arg,e)=>{
+        if(type=='add'){
+            require('../command/D2/add')(arg,e.reg)
         }
-        if(e=='create'){
+        if(type=='create'){
             console.log(e,arg)
         }
     })
