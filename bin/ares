@@ -5,8 +5,7 @@ const chalk = require('chalk')
 const fs = require('fs')
 const spinner = require('ora')();
 cmd
-    .version('1.0.1')
-    .option("-t, --template <number>", "指定模板编号")
+    .version('1.0.0')
 cmd
     .usage('<command>')
 cmd
@@ -15,6 +14,7 @@ cmd
     .command('init <name>')
     .description('选择模板 初始化项目')
     .alias("i")
+    .option("-t, --template <number>", "指定模板编号")
     .action((name) => {
         require('../command/init')(name)
     })
@@ -27,12 +27,10 @@ cmd
     .action((e) => {
         let type = 'normal';
         let arg = null;
-        if (e.list) {
-            type = 'list'
-        }
+        if (e.list) type = 'list';
         if (e.path) {
-            type = 'path',
-            arg = e.path
+            type = 'path';
+            arg = e.path;
         }
         require('../command/plugin')(type, arg)
     })
@@ -40,13 +38,17 @@ cmd
     .command('d2 <cmd> [arg]')
     .description("D2Admin相关的脚手架命令")
     .option("--reg","自动注册路由")
+    .option("-c,--complex","完整的模板")
     .action((type,arg,e)=>{
-        if(type=='add'){
-            require('../command/D2/add')(arg,e.reg)
-        }
-        if(type=='create'){
-            console.log(e,arg)
-        }
+        console.log( "当前对应模板版本:" + chalk.red("1.7.x"))
+        if(type=='add') require('../command/D2/add')(arg,e.reg);
+        if(type=='create') require('../command/D2/create')(arg,e.complex);
+        if(type=='theme') require('../command/D2/theme')();
+    })
+cmd
+    .command('test')
+    .action(()=>{
+        require('../command/test')();
     })
 cmd
     .command('*',"无效")

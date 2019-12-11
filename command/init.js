@@ -5,6 +5,7 @@ const inquirer = require('inquirer');
 const spinner = require('ora')();
 const templates = require('../config/template.json');
 const fs = require('fs');
+const loadTemplate = require('../utils/loadTemplate');
 module.exports = function (name) {
     let answerList = [];
     inquirer.prompt([
@@ -16,10 +17,9 @@ module.exports = function (name) {
         }
     ]).then(answers => {
         let index = parseInt(answers.template);
-        // console.log(index,name)
         switch (index) {
             case 3:
-                loadTemplate(index, name)
+                loadTemplate(templates[index].git, name)
                 break
             case 4:
                 let questions = [
@@ -38,46 +38,11 @@ module.exports = function (name) {
                 ;
                 return inquirer.prompt(questions)
             case 5:
-                loadTemplate(index, name)
+                loadTemplate(templates[index].git, name)
                 break
         }
 
     }).then(answers => {
 
-    })
-}
-
-function loadTemplate(index, name) {
-    spinner.color = 'blue';
-    spinner.text = "正在下载,请稍等";
-    spinner.start();
-    child.exec(`git clone ${templates[index].git} ${name}`, function (err) {
-        if (err) {
-            console.log(chalk.red(err));
-        } else {
-            spinner.succeed('下载完成');
-            spinner.info("开始安装依赖");
-            spinner.color = 'blue';
-            spinner.text = "安装中,请稍等";
-            spinner.start();
-            child.exec(`cd ${name} &&  npm install`, function (err, stdout) {
-                if (err) {
-                    console.log(chalk.red(err));
-                    spinner.fail('安装失败,请手动安装依赖');
-                } else {
-                    spinner.succeed('安装完成');
-                    spinner.info(chalk.yellow("项目启动中..."))
-                    child.exec(`npm start`, function (err, stdout) {
-                        if (err) {
-                            console.log(err)
-                            spinner.fail('启动失败,请手动启动项目');
-                        } else {
-                            console.log(stdout)
-                            spinner.succeed('项目启动完成')
-                        }
-                    });
-                }
-            });
-        }
     })
 }

@@ -12,7 +12,6 @@ module.exports = function (name, reg) {
         name: 'path',
         message: "指定页面路径(默认为'views/xxxx')"
     }]).then(answers => {
-
         //生成文件
         spinner.start(chalk.blue("开始生成文件"));
         let tempPath = __dirname.replace(/\\/g, "/").split("command")[0] + 'templates/D2Admin/';
@@ -32,7 +31,6 @@ module.exports = function (name, reg) {
                 })
             }
         })
-
         //注册路由
         if (reg) {
             console.log(chalk.yellow('正在执行:'), "注册路由");
