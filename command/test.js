@@ -1,7 +1,7 @@
 var child = require('child_process');
-var chalk = require('chalk');
-var inquirer = require('inquirer');
-var ora = require('ora');
+var path = require('path');
+const fs = require('fs');
+const createFile = require("../utils/createFile");
 module.exports = function(){
 
 }
