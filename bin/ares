@@ -45,6 +45,11 @@ cmd
         if(type=='theme') require('../command/D2/theme')();
     })
 cmd
+    .command('npm')
+    .action(()=>{
+        require('../command/npm')();
+    })
+cmd
     .command('test')
     .action(()=>{
         require('../command/test')();
