@@ -37,11 +37,10 @@ cmd
 cmd
     .command('d2 <cmd> [arg]')
     .description("D2Admin相关的脚手架命令")
-    .option("--reg","自动注册路由")
     .option("-c,--complex","完整的模板")
     .action((type,arg,e)=>{
         console.log( "当前对应模板版本:" + chalk.red("1.7.x"))
-        if(type=='add') require('../command/D2/add')(arg,e.reg);
+        if(type=='add') require('../command/D2/add')(arg);
         if(type=='create') require('../command/D2/create')(arg,e.complex);
         if(type=='theme') require('../command/D2/theme')();
     })

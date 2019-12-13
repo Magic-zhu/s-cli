@@ -6,11 +6,11 @@ const inquirer = require('inquirer');
 const spinner = require('ora')();
 const templates = require('../../config/template.json');
 const nunjucks = require('nunjucks');
-module.exports = function (name, reg) {
+module.exports = function (name) {
     inquirer.prompt([{
         type: 'input',
         name: 'path',
-        message: "指定页面路径(默认为'views/xxxx')"
+        message: "指定页面路径(默认为'views/xxxx',"+chalk.red('填写views/后面的部分')
     }]).then(answers => {
         //生成文件
         spinner.start(chalk.blue("开始生成文件"));
@@ -31,10 +31,5 @@ module.exports = function (name, reg) {
                 })
             }
         })
-        //注册路由
-        if (reg) {
-            console.log(chalk.yellow('正在执行:'), "注册路由");
-            
-        }
     })
 }

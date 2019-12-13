@@ -10,6 +10,7 @@ function loadTemplate(templatePath, name) {
     child.exec(`git clone ${templatePath} ${name}`, function (cloneErr) {
         if (cloneErr) {
             console.log(chalk.red(cloneErr));
+            spinner.stop();
         } else {
             spinner.succeed('下载完成');
             spinner.info("开始安装依赖");
@@ -18,6 +19,7 @@ function loadTemplate(templatePath, name) {
             spinner.start();
             child.exec(`cd ${name} &&  npm install`, function (installErr, stdout) {
                 if (installErr) {
+                    spinner.stop();
                     console.log(chalk.red(installErr));
                     spinner.fail('安装失败,请手动安装依赖');
                 } else {

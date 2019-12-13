@@ -17,31 +17,23 @@ module.exports = function (name) {
         }
     ]).then(answers => {
         let index = parseInt(answers.template);
-        switch (index) {
-            case 3:
-                loadTemplate(templates[index].git, name)
-                break
-            case 4:
-                let questions = [
-                    {
-                        type: 'checkbox',
-                        name: 'D2AdminPlugins',
-                        message: "请选择需要用到的插件?",
-                        choices: [
-                            "表格导出",
-                            "表格导入",
-                            "时间日期过滤器",
-                            ""
-                        ]
-                    },
-                ];
-                ;
-                return inquirer.prompt(questions)
-            case 5:
-                loadTemplate(templates[index].git, name)
-                break
+        if(index == 4){
+            let questions = [
+                {
+                    type: 'checkbox',
+                    name: 'D2AdminPlugins',
+                    message: "请选择需要用到的插件?",
+                    choices: [
+                        "表格导出",
+                        "表格导入",
+                        "时间日期过滤器",
+                        ""
+                    ]
+                },
+            ];
+            return inquirer.prompt(questions)
         }
-
+        loadTemplate(templates[index].git, name)
     }).then(answers => {
 
     })
