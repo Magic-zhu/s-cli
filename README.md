@@ -1,7 +1,7 @@
-## 介绍 
+## 介绍 (未开发完)
 ![image](assets/Ares.png)
 
-![正常大小的圆角矩形](https://img.shields.io/badge/Version-1.0.0-green.svg)
+![image](https://img.shields.io/badge/Version-1.0.0-green.svg)
 
 Ares是一个简单的脚手架,主要是为了解决每次创建项目时都要copy代码，配置插件等繁琐的工作。<br>
 提供了一些开箱即用的模板（持续更新，不限于前端，**热烈欢迎提供大家写好的现成模板**）。重点模板是超级好用的[D2Admin](https://github.com/d2-projects/d2-admin)<br>
