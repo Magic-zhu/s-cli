@@ -1,0 +1,45 @@
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    image:wx.$.image,
+    navHeight:0,//顶栏高度
+  },
+  createNav(){
+    let navHeight = this.selectComponent('#nav').init({
+        barTitleText: "默认标题",
+        scrollBarTitleText: "默认标题",
+        barTitleImage: "",
+        scrollBarTitleImage: "",
+        backgroundColor: "#ffffff",
+        scrollBackgroundColor: "",
+        frontColor: "",//胶囊颜色 仅支持 #ffffff 和 #000000
+        scrollFrontColor: "",
+        homePath: "/pages/index/index",//首页路径
+        triggerHeight:200
+    })
+    this.setData({ navHeight })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.createNav()
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+})
