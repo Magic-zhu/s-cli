@@ -50,6 +50,15 @@ cmd
         require('../command/npm')();
     })
 cmd
+    .command('weapp <cmd> [arg]')
+    .description("微信小程序原生相关的脚手架命令")
+    .option("-c,--component","新建->组件")
+    .option("-p,--page","新建->页面")
+    .action((type,arg,e)=>{
+        if(type=='init') require('../command/D2/add')(arg)
+        if(type=='create') require('../command/weapp/create')(arg)
+    })
+cmd
     .command('test')
     .action(()=>{
         require('../command/test')();

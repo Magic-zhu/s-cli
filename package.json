@@ -25,7 +25,9 @@
     "commander": "^2.20.0",
     "inquirer": "^6.5.0",
     "nunjucks": "^3.2.0",
-    "ora": "^4.0.3"
+    "ora": "^4.0.3",
+    "pretty": "^2.0.0",
+    "rxjs": "^6.5.4"
   },
   "bin": {
     "ares": "bin/ares"
