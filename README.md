@@ -39,7 +39,7 @@ ares npm
 ![image](assets/npm.png)
 
 `切换node版本`
->拿了tj大神的n改了一下
+>集成tj大神的n
 ```shell
 ares node
 ```

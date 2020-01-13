@@ -50,6 +50,11 @@ cmd
         require('../command/npm')();
     })
 cmd
+    .command('node')
+    .action(()=>{
+        require('../command/node')();
+    })
+cmd
     .command('weapp <cmd> [arg]')
     .description("微信小程序原生相关的脚手架命令")
     .option("-c,--component","新建->组件")

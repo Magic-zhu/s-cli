@@ -27,7 +27,8 @@
     "nunjucks": "^3.2.0",
     "ora": "^4.0.3",
     "pretty": "^2.0.0",
-    "rxjs": "^6.5.4"
+    "rxjs": "^6.5.4",
+    "rxjs-compat": "^6.5.4"
   },
   "bin": {
     "ares": "bin/ares"
