@@ -50,9 +50,9 @@ cmd
         require('../command/npm')();
     })
 cmd
-    .command('node')
-    .action(()=>{
-        require('../command/node')();
+    .command('node <cmd> [arg]')
+    .action((type,cmd,options)=>{
+        require('../command/node')(type,cmd,options);
     })
 cmd
     .command('weapp <cmd> [arg]')

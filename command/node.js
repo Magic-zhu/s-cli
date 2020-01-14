@@ -3,11 +3,15 @@ const inquirer = require('inquirer');
 const spinner = require('ora')();
 const Rx = require('rxjs/Rx');
 const Shell = Rx.Observable.bindNodeCallback(child.exec);
-module.exports = function () {
+module.exports = function (type,arg,options) {
     Shell('n --version').subscribe((data)=>{
-        spinner.succeed(data.toString())
+        spinner.succeed(data.toString().split(',')[0]);
+        if(type=='list'){
+            Shell('n lsr').subscribe((buffer)=>{
+                console.log(buffer.toString().split(',')[0])
+            });
+        }
     },error => {
-        return Shell('sudo npm install n -g')
-    }).subscribe()
-
+        Shell('sudo npm install n -g')
+    })
 }
