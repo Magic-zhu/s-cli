@@ -1,6 +1,6 @@
 {
   "name": "@magic-zhu/ares",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a simple cli,create project from templates",
   "main": "index.js",
   "scripts": {
@@ -12,10 +12,12 @@
   },
   "keywords": [
     "cli",
-    "d2admin"
+    "d2admin",
+    "plugin",
+    "javascript"
   ],
-  "author": "magic-zhu",
-  "license": "ISC",
+  "author": "zhuruijia",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Magic-zhu/s-cli/issues"
   },

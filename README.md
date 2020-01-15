@@ -3,7 +3,7 @@
 
 
 
-![image](https://img.shields.io/badge/Version-1.0.0-green.svg)
+![image](https://img.shields.io/badge/Version-1.0.2-green.svg)
 
 Ares是一个简单的脚手架,主要是为了解决每次创建项目时都要copy代码，配置插件等繁琐的工作。<br>
 提供了一些开箱即用的模板（持续更新，不限于前端，**热烈欢迎提供大家写好的现成模板**）。重点模板是超级好用的[D2Admin](https://github.com/d2-projects/d2-admin)<br>
@@ -39,21 +39,24 @@ ares npm
 ![image](assets/npm.png)
 
 `切换node版本`
->集成tj大神的n
-```shell
-ares node
-```
+>集成tj大神的n - :exclamation:不支持windows(以后会集成windows)
+
++ `ares node lsr`:显示所有可安装的node版本
++ `ares node ls`:显示所有已安装的node版本
++ `ares node install <version>`:不带版本的时候安装最新稳定版本的node,带版本的时候安装指定版本的node
++ `ares node use`:会出现一个列表 选择想要使用的版本按回车即可
+
 #### D2Admin部分
 
 D2部分所有的命令都是以`ares d2`开头
 
 ###### 创建项目
 
-->快速创建D2的简单模板
+:exclamation:快速创建D2的简单模板
 ```shell
 ares d2 create 
 ```
-->快速创建D2的完整模板
+:exclamation:快速创建D2的完整模板
 ```shell
 ares d2 create -c
 ```
