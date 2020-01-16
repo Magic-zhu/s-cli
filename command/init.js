@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const inquirer = require('inquirer');
 const spinner = require('ora')();
 const templates = require('../config/template.json');
+const plugins = require("../config/D2AdminPlugins");
 const fs = require('fs');
 const loadTemplate = require('../utils/loadTemplate');
 module.exports = function (name) {
@@ -17,23 +18,21 @@ module.exports = function (name) {
         }
     ]).then(answers => {
         let index = parseInt(answers.template);
-        if(index == 4){
-            let questions = [
-                {
-                    type: 'checkbox',
-                    name: 'D2AdminPlugins',
-                    message: "请选择需要用到的插件?",
-                    choices: [
-                        "表格导出",
-                        "表格导入",
-                        "时间日期过滤器",
-                        ""
-                    ]
-                },
-            ];
-            return inquirer.prompt(questions)
+        switch (index){
+            case 4:
+                let questions = [
+                    {
+                        type: 'checkbox',
+                        name: 'D2AdminPlugins',
+                        message: "请选择需要用到的插件?",
+                        choices: plugins
+                    },
+                ];
+                return inquirer.prompt(questions)
+            default:
+                loadTemplate(templates[index].git, name);
+                break
         }
-        loadTemplate(templates[index].git, name)
     }).then(answers => {
 
     })

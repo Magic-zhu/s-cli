@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Magic-zhu/s-cli#readme",
   "dependencies": {
+    "beautify": "0.0.8",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
     "inquirer": "^6.5.0",

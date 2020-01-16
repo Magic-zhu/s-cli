@@ -1,10 +1,38 @@
 [
   {
-    "name":"表格导入",
-    "value":"0"
+    "name":"D2-Crud表格",
+    "value":"@d2-projects/d2-crud"
   },
   {
-    "name":"表格导出",
+    "name":"VCharts图表",
+    "value":"v-charts"
+  },
+  {
+    "name":"右键菜单",
+    "value":"v-contextmenu"
+  },
+  {
+    "name":"JSON 树状视图",
+    "value":"vue-json-tree-view"
+  },
+  {
+    "name":"网格布局",
+    "value":"1"
+  },
+  {
+    "name":"区域划分",
+    "value":"1"
+  },
+  {
+    "name":"UEditor",
+    "value":"1"
+  },
+  {
+    "name":"数据导入导出",
+    "value":"1"
+  },
+  {
+    "name":"多语言",
     "value":"1"
   }
 ]

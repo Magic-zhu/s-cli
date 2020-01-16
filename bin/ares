@@ -1,9 +1,10 @@
 #!/usr/bin/env node --harmony
-process.env.NODE_PATH = __dirname + '/../node_modules/'
+// process.env.NODE_PATH = __dirname + '/../node_modules/'
 const cmd = require('commander')
 const chalk = require('chalk')
 const fs = require('fs')
 const spinner = require('ora')();
+const message = require('../utils/message')
 cmd
     .version('1.0.2')
 cmd
@@ -11,12 +12,13 @@ cmd
 cmd
     .command('build <path>')
 cmd
-    .command('init <name>')
+    .command('init')
     .description('选择模板 初始化项目')
     .alias("i")
     .option("-t, --template <number>", "指定模板编号")
-    .action((name) => {
-        require('../command/init')(name)
+    .action(() => {
+        message.info('正在加载模板')
+        require('../command/init')()
     })
 cmd
     .command('plugin')
@@ -46,11 +48,13 @@ cmd
     })
 cmd
     .command('npm')
+    .description("npm镜像源切换工具")
     .action(()=>{
         require('../command/npm')();
     })
 cmd
     .command('node <cmd> [arg]')
+    .description("node版本管理工具")
     .action((type,arg)=>{
         require('../command/node')(type,arg);
     })
@@ -60,8 +64,9 @@ cmd
     .option("-c,--component","新建->组件")
     .option("-p,--page","新建->页面")
     .action((type,arg,e)=>{
-        if(type=='init') require('../command/D2/add')(arg)
+        if(type=='init') require('../command/weapp/add')(arg)
         if(type=='create') require('../command/weapp/create')(arg)
+        if(type=='config') require('../command/weapp/config')()
     })
 cmd
     .command('test')

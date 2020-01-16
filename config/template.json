@@ -10,22 +10,27 @@
         "git":""
     },
     {
-        "name":"Vue/PWA集成方案-官方脚手架版",
+        "name":"待定",
         "value":"2",
         "git":""
     },
     {
-        "name":"D2admin基础模板(不使用任何D2插件)",
+        "name":"D2admin基础模板(不使用任何D2插件)-基于vue",
         "value":"3",
         "git":"https://github.com/Magic-zhu/d2-admin-start-kit.git"
     },
     {
-        "name":"D2admin基础模板(选配D2插件)",
+        "name":"D2admin基础模板(选配D2插件)-基于vue",
         "value":"4",
         "git":"https://github.com/Magic-zhu/d2-admin-start-kit.git"
     },
     {
-        "name":"D2admin完整模板(全功能,包括使用示例)",
+        "name":"D2admin完整模板(全功能,包括使用示例)-基于vue",
+        "value":"5",
+        "git":"https://github.com/Magic-zhu/d2-admin.git"
+    },
+    {
+        "name":"微信小程序懒人模板",
         "value":"5",
         "git":"https://github.com/Magic-zhu/d2-admin.git"
     }
