@@ -3,7 +3,7 @@ const path = require('path')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
 const spinner = require('ora')()
-function loadTemplate(templatePath, name) {
+function loadTemplate(templatePath, name ,ifStart=true,callback) {
     spinner.color = 'blue'
     spinner.text = "正在下载,请稍等"
     spinner.start()
@@ -24,15 +24,17 @@ function loadTemplate(templatePath, name) {
                     spinner.fail('安装失败,请手动安装依赖')
                 } else {
                     spinner.succeed('安装完成')
-                    spinner.info(chalk.green("项目启动中..."))
-                    let worker = child.exec(`cd ${name} && npm start`, { maxBuffer:2048*2048 },function (startErr, stdout) {
-                        if (startErr) {
-                            spinner.fail('启动失败,请手动启动项目')
-                        }
-                    });
-                    worker.stdout.on('data',(data)=>{
-                        console.log(data.toString())
-                    })
+                    if(ifStart){
+                        spinner.info(chalk.green("项目启动中..."))
+                        let worker = child.exec(`cd ${name} && npm start`, { maxBuffer:2048*2048 },function (startErr, stdout) {
+                            if (startErr) {
+                                spinner.fail('启动失败,请手动启动项目')
+                            }
+                        });
+                        worker.stdout.on('data',(data)=>{
+                            console.log(data.toString())
+                        })
+                    }
                 }
             });
         }

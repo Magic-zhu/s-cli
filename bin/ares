@@ -10,8 +10,6 @@ cmd
 cmd
     .usage('<command>')
 cmd
-    .command('build <path>')
-cmd
     .command('init')
     .description('选择模板 初始化项目')
     .alias("i")
@@ -20,6 +18,8 @@ cmd
         message.info('正在加载模板')
         require('../command/init')()
     })
+cmd
+    .command('build <path>')
 cmd
     .command('plugin')
     .description('选择需要克隆的插件或者组件')
