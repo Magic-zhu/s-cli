@@ -5,7 +5,7 @@ const Rx = require('rxjs/Rx');
 const Shell = Rx.Observable.bindNodeCallback(child.exec);
 module.exports = function (type,arg) {
     Shell('n --version').subscribe((buffer)=>{
-        spinner.succeed(buffer.toString().split(',')[0]);
+        spinner.succeed('当前版本:'+ buffer.toString().split(',')[0]);
         spinner.warn('版本需要在6.1以上');
         let bash ='';//脚本字符串
         switch (type){

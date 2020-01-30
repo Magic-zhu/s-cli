@@ -1,9 +1,7 @@
 const child = require('child_process')
-const path = require('path')
 const chalk = require('chalk')
-const inquirer = require('inquirer')
 const spinner = require('ora')()
-function loadTemplate(templatePath, name ,ifStart=true,callback) {
+function loadTemplate(templatePath, name ,ifStart = true,callback) {
     spinner.color = 'blue'
     spinner.text = "正在下载,请稍等"
     spinner.start()
