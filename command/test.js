@@ -1,12 +1,16 @@
 var child = require('child_process')
 var path = require('path')
 const message = require('../utils/message')
-const Shell = Rx.Observable.bindNodeCallback(child.exec);
+const Rx = require('rxjs/Rx')
+const Shell = Rx.Observable.bindNodeCallback(child.exec)
+const open = require('../utils/openBrowser')
 module.exports = function(){
-    let server = __dirname.replace(/\\/g, "/").split("command")[0] + 'server/bin/www';
+    let ui = __dirname.replace(/\\/g, "/").split("command")[0] + 'ui/index.html'
     message.success('启动服务')
     try{
-        Shell(`node  ${server}`)
+        Shell(`node ${ui}`).subscribe(buffer=>{
+            open('localhost:8080')
+        })
     }catch(err){
         message.error(err)
     }
