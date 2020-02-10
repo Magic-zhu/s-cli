@@ -2,8 +2,6 @@
 // process.env.NODE_PATH = __dirname + '/../node_modules/'
 const cmd = require('commander')
 const chalk = require('chalk')
-const fs = require('fs')
-const spinner = require('ora')();
 const message = require('../utils/message')
 cmd
     .version('1.0.2')
@@ -73,6 +71,7 @@ cmd
     .command('test')
     .action(()=>{
         require('../command/test')();
+        
     })
 cmd
     .command('*',"无效")

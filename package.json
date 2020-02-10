@@ -4,7 +4,8 @@
   "description": "a simple cli,create project from templates",
   "main": "index.js",
   "scripts": {
-    "start": ""
+    "start": "nodemon ./server/bin/www",
+    "ui": "parcel ./ui/index.html --port 8080"
   },
   "repository": {
     "type": "git",
@@ -12,8 +13,7 @@
   },
   "keywords": [
     "cli",
-    "d2admin",
-    "plugin",
+    "template",
     "javascript"
   ],
   "author": "zhuruijia",
@@ -23,15 +23,35 @@
   },
   "homepage": "https://github.com/Magic-zhu/s-cli#readme",
   "dependencies": {
+    "@magic-zhu/helper": "^1.0.1",
+    "antd": "^3.26.9",
+    "axios": "^0.19.2",
     "beautify": "0.0.8",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
     "inquirer": "^6.5.0",
+    "jade": "^1.11.0",
+    "morgan": "~1.9.0",
     "nunjucks": "^3.2.0",
     "ora": "^4.0.3",
     "pretty": "^2.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "rxjs": "^6.5.4",
-    "rxjs-compat": "^6.5.4"
+    "rxjs-compat": "^6.5.4",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "less": "^3.11.0",
+    "nodemon": "^1.19.4",
+    "parcel-bundler": "^1.12.4"
   },
   "bin": {
     "ares": "bin/ares"
