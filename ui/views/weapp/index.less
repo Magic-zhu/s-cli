@@ -1,10 +1,15 @@
-.weapp{
+@import "../../theme.less";
+
+.weapp {
     display: flex;
-    .leftside{
+    height: auto;
+
+    .leftside {
         padding-top: 40px;
         width: 200px;
         height: auto;
-        div{
+
+        div {
             width: 100%;
             height: 60px;
             display: flex;
@@ -12,14 +17,34 @@
             justify-content: center;
         }
     }
-    .rightside{
-        header{
+
+    .rightside {
+        header {
             font-size: 32px;
             padding-top: 20px;
             padding-left: 40px;
         }
-        article{
+
+        article {
             padding: 40px;
+        }
+    }
+
+    .float_menu {
+        width: auto;
+        position: fixed;
+        top: 100px;
+        left: 900px;
+        // border-left: 1px solid @border-color-base;
+        // border-top: 1px solid @border-color-base;
+        // border-bottom: 1px solid @border-color-base;
+        // box-shadow: @box-shadow-base;
+        // border-radius: @border-radius-base;
+    }
+    
+    .windows_item{
+        div{
+            margin-top: 10px;
         }
     }
 }
