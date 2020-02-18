@@ -19,7 +19,7 @@ var Mysocket = require("../socket/index");
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort('4000');
+var port = normalizePort('4066');
 app.set('port', port);
 
 /**

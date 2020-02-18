@@ -38,16 +38,16 @@ export default class WeappConfig extends React.Component{
             <div className={'WeappConfig'}>
                 <div className='leftside'>
                     <div>
-                        全局/页面<Switch defaultChecked className='ml20' />
+                        <Button type='primary'>返回</Button>
                     </div>
                     <div>
-                        <Button type='primary'>读取</Button>
+                        <Button type='default'>读取</Button>
                     </div>
                     <div>
-                        <Button type='primary'>生成</Button>
+                        <Button type='default'>生成</Button>
                     </div>
                     <div>
-                        <Button type='primary'>更新</Button>
+                        <Button type='default'>更新</Button>
                     </div>
                 </div>
                 <div className='rightside'>
