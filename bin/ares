@@ -65,7 +65,6 @@ cmd
     .action((type,arg,e)=>{
         if(type=='init') require('../command/weapp/init')(arg)
         if(type=='create') require('../command/weapp/create')(arg,e)
-        if(type=='config') require('../command/weapp/config')()
     })
 cmd
     .command('test')

@@ -4,101 +4,20 @@ const { Link } = Anchor;
 import './index.less'
 export default class WeApp extends Component {
     constructor(props) {
-        super(props)
-        this.state = {
-            type: 0,
-            pages: ['/page/index/index'],
-            config: {
+        super(props);
+        this.state ={
 
-            },
-            float_menu: [
-                { name: 'pages' },
-                { name: 'window' },
-                { name: 'tabBar' },
-                { name: 'networkTimeout' },
-                { name: 'debug' },
-                { name: 'funtionalPages' },
-                { name: 'subpackages' },
-                { name: 'workers' },
-                { name: 'requiredBackgroundModes' },
-                { name: 'plugins' },
-                { name: 'preloadRule' },
-                { name: 'resizable' },
-                { name: 'navigateToMiniProgramAppidList' },
-                { name: 'usingComponents' },
-                { name: 'permission' },
-                { name: 'sitemapLocation' },
-                { name: 'style' },
-                { name: 'useExtendedLib' },
-            ],
         }
     }
     render() {
         return (
             <div className='weapp'>
-                <div className='leftside'>
-                    <div>
-                        全局/页面<Switch defaultChecked className='ml20' />
-                    </div>
-                    <div>
-                        <Button type='primary'>读取</Button>
-                    </div>
-                    <div>
-                        <Button type='primary'>生成</Button>
-                    </div>
-                    <div>
-                        <Button type='primary'>更新</Button>
-                    </div>
-                </div>
-                <div className='rightside'>
-                    <header>配置表 </header>
-                    <article>
-                        <List
-                            header={<div><h1>pages</h1>用于指定小程序由哪些页面组成，每一项都对应一个页面的 路径（含文件名） 信息。</div>}
-                            footer={
-                                <div>
-                                    <Button type='default'>增加</Button>
-                                </div>
-                            }
-                            bordered
-                            dataSource={this.state.pages}
-                            renderItem={item => (
-                                <List.Item>
-                                    <Typography.Text mark>[页面路径]</Typography.Text> {item} <Button type='danger'>删除</Button>
-                                </List.Item>
-                            )}
-                        />
-                        <div className="windows">
-                            <h1 name='window'>window</h1>
-                            <div className='windows_item'>
-                                <div><Icon type="edit" theme="filled" /> navigationBarBackgroundColor:导航栏背景颜色，如 #000000</div>
-                                <div>
-                                    <Input placeholder="#000000" className='w200' />
-                                </div>
-                            </div>
-                            <div className='windows_item'>
-                                <div><Icon type="edit" theme="filled" /> 导航栏标题颜色</div>
-                                <div>
-                                    <Radio.Group >
-                                        <Radio value={'black'}>black</Radio>
-                                        <Radio value={'white'}>white</Radio>
-                                    </Radio.Group>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div className='float_menu'>
-                    <Anchor>
-                        {this.state.float_menu.map((item) => {
-                            return (
-                                <Link
-                                    href={'#' + item.name}
-                                    title={item.name}
-                                />
-                            )
-                        })}
-                    </Anchor>
+                <div className="pannel">
+                    <Button type='primary' className={'mr20'} icon={'thunderbolt'}>初始化项目</Button>
+                    <Button type='primary' className={'mr20'} icon={'file-add'}>新建页面</Button>
+                    <Button type='primary' className={'mr20'} icon={'file-add'}>新建组件</Button>
+                    <Button type='primary' className={'mr20'} icon={'setting'}>全局配置</Button>
+                    <Button type='primary' icon={'setting'}>页面配置</Button>
                 </div>
             </div>
         )
