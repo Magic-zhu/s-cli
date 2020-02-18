@@ -6,10 +6,10 @@ module.exports = function(){
     let rootPath = __dirname.replace(/\\/g, "/").split("command")[0]
     message.info('🚀starting GUI')
     try{
-        child.exec(`cd ${rootPath} && npm run ui && npm run server`)
+        child.exec(`cd ${rootPath} && npm run ui && npm start`)
         setTimeout(()=>{
-            message.success('http://localhost:8080/weapp')
-            open('http://localhost:8080/weapp')
+            message.success('http://localhost:8080')
+            open('http://localhost:8080')
         },500)
     }catch(err){
         message.error(err)

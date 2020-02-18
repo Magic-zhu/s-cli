@@ -67,6 +67,12 @@ cmd
         if(type=='create') require('../command/weapp/create')(arg,e)
     })
 cmd
+    .command('ui')
+    .description('脚手架的UI视图')
+    .action(()=>{
+        require('../command/ui')()
+    })
+cmd
     .command('test')
     .action(()=>{
         require('../command/test')();
