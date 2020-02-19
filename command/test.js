@@ -1,17 +1,16 @@
-var child = require('child_process')
-var path = require('path')
+const child = require('child_process')
+const path = require('path')
+const fs = require('fs')
 const message = require('../utils/message')
 const open = require('../utils/openBrowser')
 module.exports = function(){
-    let ui = __dirname.replace(/\\/g, "/").split("command")[0]
-    message.info('启动服务中')
-    try{
-        child.exec(`cd ${ui} && npm run ui`)
-        setTimeout(()=>{
-            message.success('http://localhost:8080/weapp')
-            open('http://localhost:8080/weapp')
-        },500)
-    }catch(err){
-        message.error(err)
+    console.log(process.execPath)
+    console.log(__dirname)
+    console.log(process.cwd())
+    let oriPath = process.cwd()
+    let states = fs.statSync(oriPath);
+    if(states.isDirectory()){
+        let result = fs.readdirSync(oriPath);
+        console.log(result)
     }
 }

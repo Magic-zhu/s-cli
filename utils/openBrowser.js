@@ -1,6 +1,5 @@
 const exec = require('child_process').exec
 const openDefaultBrowser = function (url) {
-    console.log(process.platform)
     switch (process.platform) {
       case "darwin":
         exec('open ' + url);
