@@ -21268,6 +21268,24 @@ div.ant-typography-edit-content {
   padding: 40px;
 }
 
+.FileSystem .content {
+  width: 900px;
+  height: 600px;
+  overflow-y: scroll;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #cccccc;
+}
+.FileSystem .item {
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.FileSystem .item:hover {
+  background-color: #cccccc;
+}
+
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
 /* stylelint-disable no-duplicate-selectors */
 /* stylelint-disable */

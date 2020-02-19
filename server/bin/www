@@ -14,7 +14,7 @@
 var app = require('../app');
 var debug = require('debug')('server-one:server');
 var http = require('http');
-var Mysocket = require("../socket/index");
+// var Mysocket = require("../socket/index");
 /**
  * Get port from environment and store in Express.
  */
@@ -31,7 +31,7 @@ var server = http.createServer(app);
 /**
  * 接入socket.io
  */
-Mysocket(server);
+// Mysocket(server);
 /**
  * Listen on provided port, on all network interfaces.
  */
