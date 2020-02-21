@@ -46,15 +46,16 @@ module.exports = function () {
                 return inquirer.prompt(questions)
             default:
                 loadTemplate(templates[index].git, answers.name);
-                break
+                break 
         }
     }).then(answers => {
-        console.log(answers)
+        if(answers){
         // let loader = Rx.Observable.bindCallback(loadTemplate(templates[index].git, answers.name))
-        reader(path.resolve('./package.json')).toPromise().then(buffer=>{
-            console.log(buffer.toString())
-        },err=>{
-            message.error(err)
-        })
+        // reader(path.resolve('./package.json')).toPromise().then(buffer=>{
+        //     console.log(buffer.toString())
+        // },err=>{
+        //     message.error(err)
+        // })
+        }
     })
 }

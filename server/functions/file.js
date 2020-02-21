@@ -2,18 +2,24 @@ const fs = require('fs');
 
 function readDir(path) {
     let states = fs.statSync(path);
-    if(states.isDirectory()){
+    if (states.isDirectory()) {
         let arr = fs.readdirSync(path);
-        let result = arr.map(item=>{
-            return { name:item,dir:fs.statSync(path+'/'+ item).isDirectory() }
+        path = path=='/'?"":path;
+        let result = arr.map(item => {
+                try {
+                    let stat = fs.statSync(path + '/' + item)
+                    return { name: item, dir: stat.isDirectory() }
+                } catch (error) {
+                    return { name: item+'@已损坏路径', dir: false }
+                }
         })
-            return result
+        return result
     }
     return false
 }
 
-const file  ={
+const file = {
     readDir,
 }
 
-module.exports =  file
+module.exports = file
