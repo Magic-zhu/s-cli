@@ -4,6 +4,13 @@
   overflow: hidden;
   display: flex;
 }
+.weapp .body {
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .weapp .pannel {
   width: 100%;
   display: flex;
@@ -11,6 +18,9 @@
   padding: 0 40px;
 }
 
+.FileSystem .nowPath {
+  padding: 20px;
+}
 .FileSystem .content {
   width: 900px;
   height: 600px;
@@ -23,10 +33,40 @@
   height: 40px;
   line-height: 40px;
   font-size: 24px;
+  user-select: none;
   cursor: pointer;
 }
 .FileSystem .item:hover {
   background-color: #cccccc;
+}
+.FileSystem .btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+.FileSystem .pathTab {
+  background-color: lightgreen;
+  margin-right: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.FileSystem .pathTab:hover {
+  opacity: 0.6;
+}
+
+.TemplateSelector {
+  width: 600px;
+  min-height: 400px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.TemplateSelector footer {
+  margin-top: 20px;
 }
 
 /* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
@@ -21327,6 +21367,11 @@ html,
   bottom: 0;
   height: 30px;
   background-color: rgba(49, 178, 192, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 .WeappConfig {
   display: flex;
@@ -42698,6 +42743,11 @@ html,
   bottom: 0;
   height: 30px;
   background-color: rgba(49, 178, 192, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 .d2 {
   padding: 40px;
@@ -64001,6 +64051,11 @@ html,
   bottom: 0;
   height: 30px;
   background-color: rgba(49, 178, 192, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 40px;
+  box-sizing: border-box;
 }
 
 

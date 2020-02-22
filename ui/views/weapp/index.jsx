@@ -1,23 +1,62 @@
 import React, { Component } from "react";
-import { Button, Steps } from 'antd';
+import { Button, Steps,Icon} from 'antd';
 const { Step } = Steps;
 import './index.less';
 import FileSystem from "../../components/FileSystem/index";
-
+import TemplateSelector from "../../components/TemplateSelector/index";
 export default class WeApp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
+            mode:'',
+            stepBarCurrent:0,
+            templates:[
+                {
+                    name:'原生小程序基础模板',
+                    value:'1'
+                },
+                {
+                    name:'敬请期待',
+                    value:'2'
+                },
+                {
+                    name:'敬请期待',
+                    value:'3'
+                },
+            ],
         }
         this.navigate.bind(this);
         this.createProject.bind(this);
         this.importProject.bind(this);
+        this.selectTemplate = this.selectTemplate.bind(this);
     }
     navigate() {
         this.props.history.push('/weapp/config')
     }
+    createProject(){
+        this.setState({mode:'create_mode'})
+    }
+    importProject(){
+
+    }
+    selectTemplate(value){
+        this.setState({
+            stepBarCurrent:1,
+        })
+        console.log(value)
+    }
     render() {
+
+        const CreateStepBar = (
+            <div className='stepBar'>
+                <Steps current={this.state.stepBarCurrent}>
+                    <Step title="选择模板" />
+                    <Step title="选择文件夹" />
+                    <Step title="初始化" />
+                    <Step title="完成" />
+                </Steps>
+            </div>
+        );
 
         return (
             <div className='weapp'>
@@ -31,23 +70,21 @@ export default class WeApp extends Component {
                         <div className="pannel">
                             <div></div>
                             <div>
-                                <Button type='primary' className={'mr20'} icon={'thunderbolt'} onClick={this.createProject}>新建项目</Button>
-                                <Button type='primary' className={'mr20'} icon={'import'} onClick={this.importProject}>导入项目</Button>
+                                <Button type='primary' className={'mr20'} icon={'thunderbolt'} onClick={()=>{this.createProject()}}>新建项目</Button>
+                                <Button type='primary' className={'mr20'} icon={'import'} onClick={()=>{this.createProject()}}>导入项目</Button>
                             </div> 
                         </div>
                     </header>
                     <div className='body'>
-                        <div className='stepBar'>
-                            <Steps current={0}>
-                                <Step title="选择模板" />
-                                <Step title="初始化" />
-                                <Step title="完成" />
-                            </Steps>
-                        </div>
+                        {this.state.mode=='create_mode'&& CreateStepBar}
+                        {this.state.mode=='create_mode' && this.state.stepBarCurrent == 0 && <TemplateSelector list={this.state.templates} onConfirm={this.selectTemplate} />}
+                        {this.state.mode=='create_mode' && this.state.stepBarCurrent == 1 && <FileSystem></FileSystem>}
                     </div>
                 </div>
                 <div className='layout-bottom'>
-
+                    <div className='version'>
+                        <Icon type="tag" /> version 1.0.0
+                    </div>
                 </div>
 
 
