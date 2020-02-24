@@ -23,7 +23,7 @@
 }
 .FileSystem .content {
   width: 900px;
-  height: 600px;
+  height: 300px;
   overflow-y: scroll;
   padding: 20px;
   box-sizing: border-box;
@@ -21329,6 +21329,12 @@ html,
 .w200 {
   width: 200px;
 }
+.w300 {
+  width: 300px;
+}
+.w400 {
+  width: 400px;
+}
 .ml20 {
   margin-left: 20px;
 }
@@ -21401,10 +21407,21 @@ html,
   width: auto;
   position: fixed;
   top: 100px;
-  left: 900px;
+  right: 200px;
+}
+.WeappConfig .windows_item {
+  margin-top: 20px;
 }
 .WeappConfig .windows_item div {
   margin-top: 10px;
+}
+.WeappConfig .tabListItem div {
+  display: flex;
+  align-items: center;
+}
+.WeappConfig .tabListItem span {
+  width: 150px;
+  cursor: default;
 }
 
 .home {
@@ -42704,6 +42721,12 @@ html,
 }
 .w200 {
   width: 200px;
+}
+.w300 {
+  width: 300px;
+}
+.w400 {
+  width: 400px;
 }
 .ml20 {
   margin-left: 20px;
@@ -64012,6 +64035,12 @@ html,
 }
 .w200 {
   width: 200px;
+}
+.w300 {
+  width: 300px;
+}
+.w400 {
+  width: 400px;
 }
 .ml20 {
   margin-left: 20px;

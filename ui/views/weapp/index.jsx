@@ -83,7 +83,7 @@ export default class WeApp extends Component {
                 </div>
                 <div className='layout-bottom'>
                     <div className='version'>
-                        <Icon type="tag" /> version 1.0.0
+                        <Icon type="tag" /> Version 1.0.0
                     </div>
                 </div>
 
