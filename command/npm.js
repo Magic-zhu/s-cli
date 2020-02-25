@@ -1,6 +1,4 @@
 const child = require('child_process');
-const path = require('path');
-const chalk = require('chalk');
 const inquirer = require('inquirer');
 const spinner = require('ora')();
 module.exports = function(){

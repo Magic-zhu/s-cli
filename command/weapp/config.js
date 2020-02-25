@@ -15,7 +15,7 @@ module.exports = function () {
             let string = beautify(JSON.stringify(res), {format: 'json'});
             return Writer(path.resolve('./app.json'), string, 'utf8').toPromise()
         })
-        .then(buffer => {
+        .then(() => {
             message.success('配置成功')
         }, (err) => {
             message.error(err)
