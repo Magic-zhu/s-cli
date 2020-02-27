@@ -8,8 +8,8 @@ Ares是一个简单的脚手架,主要是为了解决每次创建项目时都要
 
  - 📦 开箱即用的模板
  - 🚗 部分模板提供一些懒人命令
- - 🚀 GUI可视化操作 ❌开发中
- - 📖 一些常用插件和npm的整理和收集 提供一键安装的命令 ❌开发中
+ - 🚀 GUI可视化操作 ❌ 开发中
+ - 📖 一些常用插件和npm的整理和收集 提供一键安装的命令 ❌ 开发中
 
 :neckbeard:会在网上收集一些好用的插件或者包并注明用途,然后提供快速安装。<br>
 :alien:会集成一些方便的小功能:
@@ -29,14 +29,14 @@ npm install @magic-zhu/ares -g
 
 模板编号 | 模板名称| 简介 | 说明文档 
 |:---:|---|---|---
-0| 🌟D2admin基础模板(不使用任何D2插件)-基于vue|超级好用和漂亮的后台模板|https://gitee.com/fairyever/d2-admin
-1| D2admin基础模板(选配D2插件)-基于vue|开发中|https://gitee.com/fairyever/d2-admin
-2| 🌟D2admin完整模板(全功能,包括使用示例)-基于vue|有很多很棒的功能，无需二次开发|https://gitee.com/fairyever/d2-admin
-3| Vue极速模板-非官方脚手架|纯净快速的模板(适合小项目)|
-4| Vue移动端集成方案-官方脚手架版| vue移动端纯净基础模版|
-5| 🌟原生小程序开发模板| 简洁的原生小程序开发模板 |
-6| React纯净模板|纯净的react模板只集成了请求封装和路由--开发中|
-7| flutter项目开发模板(待定)|
+0| ✅D2admin基础模板(不使用任何D2插件)-基于vue|超级好用和漂亮的后台模板|https://gitee.com/fairyever/d2-admin
+1| ❌D2admin基础模板(选配D2插件)-基于vue|开发中|https://gitee.com/fairyever/d2-admin
+2| ✅D2admin完整模板(全功能,包括使用示例)-基于vue|有很多很棒的功能，无需二次开发|https://gitee.com/fairyever/d2-admin
+3| ❌Vue极速模板-非官方脚手架|纯净快速的模板(适合小项目)|
+4| ❌Vue移动端集成方案-官方脚手架版| vue移动端纯净基础模版|
+5| ❌原生小程序开发模板| 简洁的原生小程序开发模板 |
+6| ❌React纯净模板|纯净的react模板只集成了请求封装和路由--开发中|
+7| ❌flutter项目开发模板(待定)|
 
 ## 插件列表
 
