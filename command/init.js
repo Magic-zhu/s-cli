@@ -34,16 +34,16 @@ module.exports = function () {
         _answer.template = index;
         _answer.name = answers.name;
         switch (index){
-            case 4:
-                let questions = [
-                    {
-                        type: 'checkbox',
-                        name: 'D2AdminPlugins',
-                        message: "请选择需要用到的插件?",
-                        choices: plugins
-                    },
-                ];
-                return inquirer.prompt(questions)
+            // case 4:
+            //     let questions = [
+            //         {
+            //             type: 'checkbox',
+            //             name: 'D2AdminPlugins',
+            //             message: "请选择需要用到的插件?",
+            //             choices: plugins
+            //         },
+            //     ];
+            //     return inquirer.prompt(questions)
             default:
                 loadTemplate(templates[index].git, answers.name);
                 break 
