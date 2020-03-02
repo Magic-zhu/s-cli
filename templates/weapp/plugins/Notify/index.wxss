@@ -1,0 +1,24 @@
+.rui-notify{
+  position:fixed;
+  left:0;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  font-size: 28rpx;
+  z-index: 999999;
+}
+.rui-notify .block{
+  width: 100%;
+  height: 40rpx;
+}
+.rui-notify .message{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 60rpx;
+}

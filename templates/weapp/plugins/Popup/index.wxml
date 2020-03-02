@@ -1,0 +1,6 @@
+<view class='Popup' wx:if='{{show}}'>
+    <view class='black_bg' bindtap='hide'></view>
+    <view class='content' animation='{{animation}}' style="{{style}}">
+        <slot></slot>
+    </view>
+</view>

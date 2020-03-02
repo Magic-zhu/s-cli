@@ -1,0 +1,13 @@
+<!--components/BetterImage/BetterImage.wxml-->
+<view class='better_image' style="width:{{width}};">
+  <image 
+        src="{{src}}" 
+        mode="{{mode}}" 
+        class='better_image_body' 
+        style='opacity:{{ready?1:0}};height:{{height}}' 
+        bindload="loadImage"
+    />
+  <view class='better_image_bg' style="opacity:{{ready?0:1}}">
+    <image src='./waiting.gif' class='' />
+  </view>
+</view>

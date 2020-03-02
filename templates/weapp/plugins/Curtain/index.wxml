@@ -1,0 +1,8 @@
+<!--components/curtain/index.wxml-->
+<view class='curtain' wx:if='{{show}}'>
+    <view class='box' animation='{{animation_box}}'> 
+        <slot></slot>
+        <image src='./close_curtain.png' class='close' bindtap='close'></image>
+    </view>
+    <view class='bg' animation='{{animation_bg}}' bindtap='close'></view>
+</view>

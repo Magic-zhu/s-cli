@@ -1,0 +1,9 @@
+<view 
+  class="rui-notify" 
+  wx:if='{{show}}' 
+  animation='{{animation}}' 
+  style="background-color:{{bgColor}};{{position=='top'?'top:-60rpx':'bottom:'+ bottom}}"
+>
+  <view class="message">{{message}}</view>
+  <view class="block" style="background-color:{{bgColor}}" wx:if='{{needBlock}}'></view>
+</view>

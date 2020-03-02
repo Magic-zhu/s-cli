@@ -1,0 +1,34 @@
+.curtain {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.curtain .bg {
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0;
+}
+.curtain .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+}
+.curtain .close {
+  width: 88rpx;
+  height: 88rpx;
+  margin: 80rpx auto;
+}

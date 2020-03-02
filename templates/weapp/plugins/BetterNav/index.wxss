@@ -1,0 +1,69 @@
+.better_nav_wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.better_nav_wrapper .better_nav_content {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.better_nav_wrapper .better_nav_menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10rpx;
+  height: 30px;
+  border-radius: 15px;
+  width: 140rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.better_nav_wrapper .better_nav_menu .back {
+  width: 35rpx;
+  height: 35rpx;
+  margin-right: 10rpx;
+}
+.better_nav_wrapper .better_nav_menu .line {
+  background-color: #333333;
+  width: 2rpx;
+  height: 33.33333333rpx;
+}
+.better_nav_wrapper .better_nav_menu .home {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 20rpx;
+}
+.better_nav_wrapper .better_nav_menu_white {
+  background-color: rgba(255, 255, 255, 0.57);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+.better_nav_wrapper .better_nav_menu_black {
+  background-color: rgba(0, 0, 0, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.better_nav_wrapper .better_nav_home {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10rpx;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.better_nav_wrapper .better_nav_home image {
+  width: 30rpx;
+  height: 30rpx;
+}
