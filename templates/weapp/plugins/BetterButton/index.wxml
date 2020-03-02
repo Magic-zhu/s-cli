@@ -1,0 +1,34 @@
+<!--components/BetterButton/index.wxml-->
+<view 
+    class='better-button {{disabled?"better-button-disabled":""}}' 
+    style='{{custom||""}}' 
+    hover-class='{{disabled?"":"better-button-hover"}}'
+    hover-stay-time='100'
+    disabled="{{disabled}}"
+    >
+    <button 
+        wx:if='{{options}}'
+        form-type='{{options.formType||null}}'
+        open-type='{{options.openType||null}}' 
+        session-from='{{options.sessionFrom||""}}'
+        send-message-title='{{options.sendMessageTitle||""}}'
+        send-message-path='{{options.sendMessagePath||""}}'
+        send-message-img='{{options.sendMessageImg||""}}'
+        app-parameter='{{options.appParameter||""}}'
+        show-message-card='{{options.showMessageCard||""}}'
+        bindgetuserinfo='handleGetuserinfo'
+        bindcontact='handleContact'
+        bindgetphonenumber='handlePhoneNumber'
+        bindopensetting='handleOpenSetting'
+        bindlaunchapp='handleLaunchapp'
+    ></button>
+    <view class='content'  bindtap='handleTap' data-params='{{params}}'>
+        <image class='image' src="{{image}}" wx:if='{{image}}'></image>
+        <view class='loading' wx:if='{{loading}}'>
+            <view class='loading-view loading1'></view>
+            <view class='loading-view loading2'></view>
+            <view class='loading-view loading3'></view>
+        </view>
+        <view wx:else>{{text}}</view>
+    </view>
+</view>

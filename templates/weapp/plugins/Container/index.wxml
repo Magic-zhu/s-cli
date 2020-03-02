@@ -1,0 +1,7 @@
+<!--容器组件-->
+<view class='container'>
+    <better-nav id='nav' />
+    <view style='padding-top:{{navHeight}}rpx' class='wrapper'>
+        <slot></slot>
+    </view>
+</view>

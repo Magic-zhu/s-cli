@@ -1,0 +1,79 @@
+.better-button {
+  width: 670rpx;
+  height: 90rpx;
+  background-color: #13227a;
+  border-radius: 12rpx;
+  overflow: hidden;
+  position: relative;
+}
+.better-button button {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.better-button .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  letter-spacing: 8rpx;
+  position: relative;
+}
+.better-button .image {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.better-button .loading {
+  width: 150rpx;
+  height: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.better-button .loading .loading-view {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15px;
+  margin-right: 10rpx;
+  background: white;
+  animation: load 1.2s ease-in-out infinite alternate-reverse;
+}
+@keyframes load {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.better-button .loading .loading1 {
+  animation-delay: 0.2s;
+}
+.better-button .loading .loading2 {
+  animation-delay: 0.4s;
+}
+.better-button .loading .loading3 {
+  animation-delay: 0.6s;
+}
+.better-button-hover {
+  opacity: 0.8;
+}
+.better-button-disabled {
+  background-color: #cccccc;
+}

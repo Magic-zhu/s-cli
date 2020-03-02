@@ -1,0 +1,11 @@
+<!--components/Cell/index.wxml-->
+<view class="cell {{'cell_'+size}}" style="{{custom}}" bindtap='handleTap' hover-class="{{customHover}}">
+  <view class="item">
+    <image src="{{icon_left}}" class="icon" wx:if='{{icon_left}}' mode="widthFix"></image>
+    <view class="text_left">{{text_left}}</view>
+  </view>
+  <view class="item">
+    <view class="text_right">{{text_right}}</view>
+    <image src="{{icon_right}}" class="icon" wx:if='{{icon_right}}' mode="widthFix"></image>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+.cell {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cell .item {
+  display: flex;
+  align-items: center;
+}
+.cell .text_left {
+  margin-left: 20rpx;
+}
+.cell .text_right {
+  margin-right: 20rpx;
+}
+.cell_normal {
+  height: 80rpx;
+}
+.cell_normal .icon {
+  width: 40rpx;
+}
+.cell_big {
+  height: 100rpx;
+}
+.cell_big .icon {
+  width: 60rpx;
+}
+.cell_small {
+  height: 60rpx;
+}
+.cell_small .icon {
+  width: 40rpx;
+}

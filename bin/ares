@@ -65,6 +65,7 @@ cmd
     .action((type,arg,e)=>{
         if(type=='init') require('../command/weapp/init')(arg)
         if(type=='create') require('../command/weapp/create')(arg,e)
+        if(type=='plugins') require('../command/weapp/plugins')()
     })
 cmd
     .command('ui')
