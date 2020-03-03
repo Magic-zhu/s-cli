@@ -1,6 +1,6 @@
 {
   "name": "@magic-zhu/ares",
-  "version": "1.0.2",
+  "version": "1.0.21",
   "description": "a simple cli,create project from templates",
   "main": "index.js",
   "scripts": {
