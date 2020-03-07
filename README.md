@@ -1,4 +1,4 @@
-# 介绍 (未开发完)
+# 介绍 (💦开发中)
 ![image](assets/Ares.png)
 
 ![image](https://img.shields.io/badge/Version-1.0.21-green.svg)  ![image](https://img.shields.io/badge/node->10-red.svg)
@@ -34,7 +34,7 @@ npm install @magic-zhu/ares -g
 2| ✅D2admin完整模板(全功能,包括使用示例)-基于vue|有很多很棒的功能，无需二次开发|https://gitee.com/fairyever/d2-admin
 3| ❌Vue极速模板-非官方脚手架|纯净快速的模板(适合小项目)|
 4| ❌Vue移动端集成方案-官方脚手架版| vue移动端纯净基础模版|
-5| 💦原生小程序开发模板| 简洁的原生小程序开发模板 |
+5| 💦原生小程序开发模板| 简洁的原生小程序开发模板(👉支持cli命令<a href='#weapp'>跳转</a>)|
 6| ❌React纯净模板|纯净的react模板只集成了请求封装和路由--开发中|
 7| ❌flutter项目开发模板(待定)|
 
@@ -95,6 +95,7 @@ ares d2 add
 ```shell
 ares d2 theme 
 ```
+<div id='weapp'></div>
 
 ###  🧩原生微信小程序
 
