@@ -10,13 +10,15 @@ module.exports = function (name) {
     inquirer.prompt([{
         type: 'input',
         name: 'path',
-        message: "指定页面路径(默认为'views/xxxx',"+chalk.red('填写views/后面的部分')
+        message: "指定页面路径(默认为'views/xxxx'," + chalk.red('填写views/后面的部分')
     }]).then(answers => {
         //生成文件
         spinner.start(chalk.blue("开始生成文件"));
         let tempPath = __dirname.replace(/\\/g, "/").split("command")[0] + 'templates/D2Admin/';
         nunjucks.configure(tempPath);
-        nunjucks.render("newPage.njk", { name }, function (err, res) {
+        nunjucks.render("newPage.njk", {
+            name
+        }, function (err, res) {
             if (err) console.log(chalk.red(err));
             else {
                 let template = res;

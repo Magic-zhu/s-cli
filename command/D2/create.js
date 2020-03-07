@@ -1,7 +1,3 @@
-const path = require('path');
-const chalk = require('chalk');
-const inquirer = require('inquirer');
-const spinner = require('ora')();
 const templates = require('../../config/template.json');
 const loadTemplate = require('../../utils/loadTemplate');
 module.exports = function(name,complex){
