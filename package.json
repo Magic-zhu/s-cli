@@ -1,8 +1,8 @@
 {
   "name": "@magic-zhu/ares",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "a simple cli,create project from templates",
-  "main": "index.js",
+  "main": "bin/ares",
   "scripts": {
     "start": "nodemon ./server/bin/www",
     "ui": "parcel ./ui/index.html --port 8080"
