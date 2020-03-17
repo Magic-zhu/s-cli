@@ -1,0 +1,4 @@
+<Container navBarOptions='{{navBarOptions}}'>
+    <view class=''>
+    </view>
+</Container>
