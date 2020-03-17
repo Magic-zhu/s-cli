@@ -5,7 +5,7 @@ const Rx = require('rxjs/Rx');
 const Writer = Rx.Observable.bindNodeCallback(fs.writeFile);
 const Reader = Rx.Observable.bindNodeCallback(fs.readFile);
 
-function registerRoute(name){
+function registerRoute(params){
     message.info("读取app.json文件");
     Reader(path.resolve("./app.json"))
         .toPromise()
@@ -14,7 +14,7 @@ function registerRoute(name){
             config.pages.push(`pages/${name}/index`)
             return Writer(path.resolve("./app.json"), JSON.stringify(config)).toPromise()
         })
-        .then(res => {
+        .then(() => {
             message.success('路由添加成功')
         })
         .catch(err => {
@@ -32,16 +32,15 @@ function createNewComponent(){
 
 module.exports = function (name, e) {
 
-    let generate_path = e.path ? e.path : './'
-    generate_path = path.resolve(generate_path)
+    let generate_path = e.path ? path.resolve("./") + e.path:path.resolve("./") + "/pages";
 
     if (e.component) {
-        
+        console.log(`${generate_path}/${name}`)
     }
 
     if (e.page) {
 
-        registerRoute(name,e.path)
+        registerRoute({name,customPath:e.path,subpackage:e.subpackage})
     }
 
 }
