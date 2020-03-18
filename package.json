@@ -1,11 +1,11 @@
 {
   "name": "@magic-zhu/ares",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "a simple cli,create project from templates",
   "main": "bin/ares",
   "scripts": {
-    "start": "nodemon ./server/bin/www",
-    "ui": "parcel ./ui/index.html --port 8080"
+    "server": "nodemon ./server/bin/www",
+    "ui": "parcel ./ui/index.html --port 8888"
   },
   "repository": {
     "type": "git",
@@ -51,6 +51,7 @@
     "parcel-bundler": "^1.12.4"
   },
   "bin": {
-    "ares": "bin/ares"
+    "ares": "bin/ares",
+    "ares-cli": "bin/ares-cli"
   }
 }

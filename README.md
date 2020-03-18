@@ -1,7 +1,7 @@
 # 介绍 (💦开发中)
 ![image](assets/Ares.png)
 
-![image](https://img.shields.io/badge/Version-1.0.22-green.svg)  ![image](https://img.shields.io/badge/node->10-red.svg)
+![image](https://img.shields.io/badge/Version-1.0.23-green.svg)  ![image](https://img.shields.io/badge/node->10-red.svg)
 
 Ares是一个简单的脚手架,主要是为了解决每次创建项目时都要copy代码，配置插件等繁琐的工作。<br>
 提供了一些开箱即用的模板（持续更新，不限于前端，**热烈欢迎提供大家写好的现成模板**）。
@@ -54,7 +54,7 @@ ares npm
 ![image](assets/npm.png)
 
 `切换node版本`
->集成tj大神的n - :exclamation:不支持windows(待更新后会集成windows)
+>集成tj大神的n - :exclamation:不支持windows
 
 + `ares node lsr`:显示所有可安装的node版本
 + `ares node ls`:显示所有已安装的node版本
@@ -64,7 +64,7 @@ ares npm
 ### 🔥 选择模版初始化项目
 
 ```bash
-    ares init
+ares init
 ```
 ![image](assets/ares_init.png)
 
@@ -101,16 +101,29 @@ ares d2 theme
 
 原生微信小程序部分所有的命令都是以`ares weapp`开头
 
+🍀命令需要在小程序项目根目录下执行 (app.json同级目录)
+
 #### 新建页面
+
+```
+ares weapp create <name> --page 
+ares weapp create <name> -p //--page的简写
+ares weapp create <name> --page  --subpackage
+ares weapp create <name> -p -s
+ares weapp create <name> -p -s --path <path>
+```
+`name` 是新建页面的名字<br>
+`--page`或者`-p` 表示新建的是页面<br>
+`--subpackage`或者`-s` 表示这是一个分包<br>
+`--path` 指定要新建的路径 示例：ares weapp textPage -p --path pages/testModule<br>
 
 #### 新建组件
 
 #### 安装脚手架提供的组件
 
 ```bash
-    ares weapp plugins
+ares weapp plugins
 ```
-该命令需要在小程序项目根目录下执行 (app.json同级目录)
 
 ![示例图片](/assets/ares_weapp_plugins.png)
 

@@ -1,0 +1,15 @@
+#!/usr/bin/env node --harmony
+const cmd = require('commander')
+const chalk = require('chalk')
+const message = require('../utils/message')
+cmd
+    .version('1.0.23')
+cmd
+    .usage('<command>')
+cmd
+    .command('update')
+    .description('更新脚手架')
+    .action(()=>{
+        message.success('当前版本：V1.0.23')
+    })
+cmd.parse(process.argv)
