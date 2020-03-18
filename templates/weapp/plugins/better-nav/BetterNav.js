@@ -54,6 +54,7 @@ Component({
       let pages = getCurrentPages();
       console.log("当前的页面栈:", pages, pages[0].route);
       let type = 0;
+      options.homePath = options.homePath || '/pages/index/index'
       if ("/" + pages[0].route == options.homePath && pages.length < 2) {
         type = 2;
       }
@@ -77,7 +78,7 @@ Component({
         scrollFrontColor: options.scrollFrontColor || '',
         homeIcon: options.frontColor == '#000000' ? "./home.png" : "./home_white.png",
         backIcon: options.frontColor == '#000000' ? "./back.png" : "./back_white.png",
-        homePath: options.homePath||'/pages/index/index',//首页路径
+        homePath: options.homePath,//首页路径
         type,
         titleBarHeight: navHeight,
         triggerHeight: options.triggerHeight || 200,

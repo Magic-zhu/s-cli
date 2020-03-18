@@ -2,9 +2,13 @@
 <view class='better_nav_wrapper' style='height: {{titleBarHeight}}px;background-color:{{backgroundColor}};opacity:{{opacity}}'>
   <view class='better_nav_content' style='margin-top:{{statusBarHeight+padding}}px'>
     <view class="{{frontColor=='#ffffff'?'better_nav_menu  better_nav_menu_black':'better_nav_menu  better_nav_menu_white'}}" wx:if='{{type==0}}'>
-      <image src="{{backIcon}}" class='back' bindtap="back" />
+        <view bindtap="back" class='box'>
+            <image src="{{backIcon}}" class='back' />
+        </view>
       <view class='line'></view>
-      <image src="{{homeIcon}}" class='home' bindtap="goHome" />
+      <view bindtap="goHome" class='box'>
+            <image src="{{homeIcon}}" class='home'  />
+      </view>
     </view>
     <view wx:if='{{type==1}}' class="{{frontColor=='#ffffff'?'better_nav_home  better_nav_menu_black':'better_nav_home  better_nav_menu_white'}}"  bindtap="goHome" >
       <image src="{{homeIcon}}" class='home' />

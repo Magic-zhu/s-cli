@@ -5,7 +5,7 @@
   width: 100%;
   z-index: 11;
   box-sizing: border-box;
-  font-size: 28rpx;
+  font-size: 34rpx;
 }
 .better_nav_wrapper .better_nav_content {
   height: 30px;
@@ -13,6 +13,13 @@
   align-items: center;
   justify-content: center;
   position: relative;
+}
+.better_nav_wrapper .better_nav_content .box {
+  width: 49%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .better_nav_wrapper .better_nav_menu {
   position: absolute;
@@ -30,7 +37,7 @@
 .better_nav_wrapper .better_nav_menu .back {
   width: 35rpx;
   height: 35rpx;
-  margin-right: 10rpx;
+  margin-left: 5px;
 }
 .better_nav_wrapper .better_nav_menu .line {
   background-color: #333333;
@@ -40,7 +47,6 @@
 .better_nav_wrapper .better_nav_menu .home {
   width: 30rpx;
   height: 30rpx;
-  margin-left: 20rpx;
 }
 .better_nav_wrapper .better_nav_menu_white {
   background-color: rgba(255, 255, 255, 0.57);

@@ -1,0 +1,76 @@
+.flexc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal .black_bg {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  opacity: 0;
+}
+.modal .box {
+  width: 588rpx;
+  height: 372rpx;
+  background: #ffffff;
+  border-radius: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 26rpx;
+  overflow: hidden;
+  transform: scale(1.2);
+  opacity: 0;
+}
+.modal .box .top {
+  height: 280rpx;
+  width: 100%;
+  border-bottom: 1px solid #DFDFDF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.modal .box .top .txt {
+  margin-top: 20rpx;
+}
+.modal .box .bottom {
+  height: 88rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal .box .bottom .item {
+  flex: 1;
+  height: 100%;
+  color: #BFBFBF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal .box .bottom .item:last-of-type {
+  border-left: 1px solid #DFDFDF;
+  color: #2C7BBE;
+}
+.modal .grey {
+  background-color: #eeeeee;
+}

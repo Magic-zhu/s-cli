@@ -1,0 +1,13 @@
+<view class="modal" wx:if='{{visible}}'>
+    <view class="black_bg" animation='{{animationBg}}' bindtap="cancel"></view>
+    <view class="box" animation='{{animation}}'>
+      <view class="top">
+        <image style="width:112rpx;height:112rpx;" src="./{{type}}.png" />
+        <view class="txt">{{content}}</view>
+      </view>
+      <view class="bottom">
+          <view bindtap="cancel" class="item" hover-class="grey">{{cancelText}}</view>
+          <view bindtap="confirm" class="item" hover-class="grey">{{confirmText}}</view>
+      </view>
+    </view>
+</view>

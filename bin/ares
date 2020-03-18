@@ -4,7 +4,7 @@ const cmd = require('commander')
 const chalk = require('chalk')
 const message = require('../utils/message')
 cmd
-    .version('1.0.23')
+    .version('1.1.0')
 cmd
     .usage('<command>')
 cmd
