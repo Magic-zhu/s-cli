@@ -1,19 +1,35 @@
 [
 	{
-		"name":"BetterButton组件",
-		"value":"BetterButton"
+		"name":"better-button组件",
+		"value":"better-button"
 	},
 	{
-		"name":"BetterImage组件",
+		"name":"better-image组件",
 		"value":"BetterImage"	
+	},
+	{
+		"name":"better-nav组件",
+		"value":"better-nav"	
 	},
 	{
 		"name":"Cell组件",
 		"value":"Cell"	
 	},
 	{
+		"name":"Container组件",
+		"value":"Container"	
+	},
+	{
 		"name":"Curtain组件",
 		"value":"Curtain"	
+	},
+	{
+		"name":"Icon组件",
+		"value":"Icon"	
+	},
+	{
+		"name":"Modal组件",
+		"value":"Modal"	
 	},
 	{
 		"name":"Notify组件",
