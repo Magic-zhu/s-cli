@@ -1,15 +1,16 @@
 # 介绍 (💦开发中)
 ![image](assets/Ares.png)
 
-![image](https://img.shields.io/badge/Version-1.0.22-green.svg)  ![image](https://img.shields.io/badge/node->10-red.svg)
+![image](https://img.shields.io/badge/Version-1.1.0-green.svg)  ![image](https://img.shields.io/badge/node->10-red.svg)
 
 Ares是一个简单的脚手架,主要是为了解决每次创建项目时都要copy代码，配置插件等繁琐的工作。<br>
 提供了一些开箱即用的模板（持续更新，不限于前端，**热烈欢迎提供大家写好的现成模板**）。
 
  - 📦 开箱即用的模板
  - 🚗 部分模板提供一些懒人命令
- - 🚀 GUI可视化操作 ❌ 开发中
- - 📖 一些常用插件和npm的整理和收集 提供一键安装的命令 ❌ 开发中
+ - 🚀 GUI可视化操作 💦 开发中
+ - 📖 一些常用插件和npm的整理和收集 提供一键安装的命令 💦 开发中
+ - 🍀 原生小程序工具👉<a href='#weapp'>跳转</a> ✅
 
 :neckbeard:会在网上收集一些好用的插件或者包并注明用途,然后提供快速安装。<br>
 :alien:会集成一些方便的小功能:
@@ -34,7 +35,7 @@ npm install @magic-zhu/ares -g
 2| ✅D2admin完整模板(全功能,包括使用示例)-基于vue|有很多很棒的功能，无需二次开发|https://gitee.com/fairyever/d2-admin
 3| ❌Vue极速模板-非官方脚手架|纯净快速的模板(适合小项目)|
 4| ❌Vue移动端集成方案-官方脚手架版| vue移动端纯净基础模版|
-5| 💦原生小程序开发模板| 简洁的原生小程序开发模板(👉支持cli命令<a href='#weapp'>跳转</a>)|
+5| ✅原生小程序开发模板| 简洁的原生小程序开发模板(👉支持cli命令<a href='#weapp'>跳转</a>)|
 6| ❌React纯净模板|纯净的react模板只集成了请求封装和路由--开发中|
 7| ❌flutter项目开发模板(待定)|
 
@@ -54,7 +55,7 @@ ares npm
 ![image](assets/npm.png)
 
 `切换node版本`
->集成tj大神的n - :exclamation:不支持windows(待更新后会集成windows)
+>集成tj大神的n - :exclamation:不支持windows
 
 + `ares node lsr`:显示所有可安装的node版本
 + `ares node ls`:显示所有已安装的node版本
@@ -64,7 +65,7 @@ ares npm
 ### 🔥 选择模版初始化项目
 
 ```bash
-    ares init
+ares init
 ```
 ![image](assets/ares_init.png)
 
@@ -97,23 +98,56 @@ ares d2 theme
 ```
 <div id='weapp'></div>
 
-###  🧩原生微信小程序
+###  🍀原生微信小程序
 
-原生微信小程序部分所有的命令都是以`ares weapp`开头
+>原生微信小程序部分所有的命令都是以`ares weapp`开头
+
+🍀命令需要在小程序项目根目录下执行 (app.json同级目录)
 
 #### 新建页面
 
+>脚手架会自动注册路由
+
+```bash
+ares weapp create <name> --page 
+ares weapp create <name> -p //--page的简写
+ares weapp create <name> --page  --subpackage
+ares weapp create <name> -p -s
+ares weapp create <name> -p -s <subpackageName> --path <path>
+```
+>-p可以省略
+
+`name` 是新建页面的名字<br>
+`--page`或者`-p` 表示新建的是页面<br>
+`--subpackage`或者`-s` 表示这是一个分包<br>
+`--path` 指定要新建的路径 <br>
+
+**🍀示例**
+
++ `ares weapp create demo` 最简单的示例  默认创建在 /pages/demo 这个目录下面
++ `ares weapp create textPage --path /pages/testModule` 创建在 /pages/testModule/testPage 
++ `ares weapp create hero -s packageA` 默认创建在 /packageA/pages/hero  
++ `ares weapp create hero -s packageA --path /pages/testModule ` 创建在/packageA/pages/testModule/hero
+
 #### 新建组件
 
+大体上和新建页面类似
+
+>不指定path的情况下 默认/components
+
+```bash
+ares weapp create <name> -c
+ares weapp create <name> --component
+ares weapp create <name> -c --path <path>
+```
 #### 安装脚手架提供的组件
 
 ```bash
-    ares weapp plugins
+ares weapp plugins
 ```
-该命令需要在小程序项目根目录下执行 (app.json同级目录)
 
 ![示例图片](/assets/ares_weapp_plugins.png)
 
-选择组件后回自动将组件安装到`components`文件夹下并自动在全局注册好
+选择组件后会自动将组件安装到`components`文件夹下并自动在全局注册好
 
 ![示例图片](/assets/ares_weapp_plugins_install.png)

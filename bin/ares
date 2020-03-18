@@ -4,7 +4,7 @@ const cmd = require('commander')
 const chalk = require('chalk')
 const message = require('../utils/message')
 cmd
-    .version('1.0.2')
+    .version('1.1.0')
 cmd
     .usage('<command>')
 cmd
@@ -60,9 +60,10 @@ cmd
 cmd
     .command('weapp <cmd> [arg]')
     .description("微信小程序原生相关的脚手架命令")
-    .option("-c,--component","新建->组件")
-    .option("-p,--page","新建->页面")
-    .option("--path <path>","指定路径")
+    .option("-s,--subpackage <subpackage>",'分包名字')
+    .option("-c,--component",'新建->组件')
+    .option("-p,--page",'新建->页面')
+    .option("--path <path>",'指定路径')
     .action((type,arg,e)=>{
         if(type=='init') require('../command/weapp/init')(arg)
         if(type=='create') require('../command/weapp/create')(arg,e)

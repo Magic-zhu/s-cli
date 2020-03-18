@@ -3,13 +3,9 @@
   left:0;
   width: 100%;
   background-color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   color: white;
   font-size: 28rpx;
-  z-index: 999999;
+  z-index: 99999;
 }
 .rui-notify .block{
   width: 100%;
