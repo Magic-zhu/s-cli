@@ -2,7 +2,6 @@ import React from "react";
 import "./index.less";
 import Weapp from '../../assets/weapp.jpg';
 import D2 from "../../assets/d2.jpg";
-
 export default class Home extends React.Component{
     constructor(props){
         super(props);
@@ -26,6 +25,9 @@ export default class Home extends React.Component{
     }
     navigate(path){
         this.props.history.push(path)
+    }
+    componentDidMount(){
+
     }
     render(){
         return (

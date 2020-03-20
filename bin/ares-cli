@@ -2,7 +2,7 @@
 const cmd = require('commander')
 const message = require('../utils/message')
 cmd
-    .version('1.1.0')
+    .version('1.1.2')
 cmd
     .usage('<command>')
 cmd
