@@ -24,9 +24,6 @@ Component({
     loading:{
         type:Boolean
     },
-    params:{
-        type:Object
-    }
   },
 
   /**

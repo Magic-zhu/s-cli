@@ -22,7 +22,7 @@
         bindopensetting='handleOpenSetting'
         bindlaunchapp='handleLaunchapp'
     ></button>
-    <view class='content'  bindtap='handleTap' data-params='{{params}}'>
+    <view class='content'  bindtap='handleTap'>
         <image class='image' src="{{image}}" wx:if='{{image}}'></image>
         <view class='loading' wx:if='{{loading}}'>
             <view class='loading-view loading1'></view>
