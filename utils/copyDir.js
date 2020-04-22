@@ -14,11 +14,11 @@ function copyDir(src,dest) {
 			message.info('正在生成:'+ dest + item );
 			Copy(src+"/"+item,dest+"/"+item).toPromise()
 			.then(res=>{
-				message.success('生成成功:'+ dest + item);
+				message.success('生成成功:'+ dest +'/'+ item);
 			})
 			.catch(err=>{
 				console.log(err)
-				message.error('生成失败:'+ dest + item);
+				message.error('生成失败:'+ dest +'/'+ item);
 			})
 		})
 

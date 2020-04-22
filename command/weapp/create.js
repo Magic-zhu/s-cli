@@ -24,7 +24,6 @@ function registerRoute(params){
                 let index = config.subpackages.findIndex((item)=>{
                     return item.root == params.subpackage                                    
                 })
-                console.log(index)
                 config.subpackages[index].pages.push(route);
             }
             let format_string = beautify(JSON.stringify(config),{format: 'json'});
