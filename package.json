@@ -4,7 +4,7 @@
   "description": "a simple cli,create project from templates",
   "main": "bin/ares",
   "scripts": {
-    "server": "nodemon ./server/bin/www",
+    "server": "nodemon ./server/bin/www --port 8889",
     "ui": "parcel ./ui/index.html --port 8888"
   },
   "repository": {
@@ -52,6 +52,7 @@
   },
   "bin": {
     "ares": "bin/ares",
-    "ares-cli": "bin/ares-cli"
+    "ares-cli": "bin/ares-cli",
+    "weapp": "bin/weapp"
   }
 }
