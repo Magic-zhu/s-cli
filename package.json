@@ -4,8 +4,9 @@
   "description": "a simple cli,create project from templates",
   "main": "bin/ares",
   "scripts": {
-    "server": "nodemon ./server/bin/www --port 8889",
-    "ui": "parcel ./ui/index.html --port 8888"
+    "server:hot": "nodemon ./server/bin/www --port 8889",
+    "ui": "parcel ./ui/index.html --port 8888",
+    "server":"node ./server/bin/www"
   },
   "repository": {
     "type": "git",
