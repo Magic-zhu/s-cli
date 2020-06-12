@@ -1,0 +1,12 @@
+#!/usr/bin/env node --harmony
+const cmd = require('commander')
+cmd
+    .usage('<command>')
+cmd
+    .command('init')
+    .description('初始化项目')
+    .action(()=>{
+       	// require('../command/D2/list')
+       	console.log('haha')
+    })
+cmd.parse(process.argv)
