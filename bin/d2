@@ -9,4 +9,14 @@ cmd
        	// require('../command/D2/list')
        	console.log('haha')
     })
+cmd.command('create')
+    .description('')
+    .action(()=>{
+
+    })
+cmd.command('create')
+    .description('')
+    .action(()=>{
+        
+    })    
 cmd.parse(process.argv)

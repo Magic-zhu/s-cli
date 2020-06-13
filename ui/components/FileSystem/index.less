@@ -1,6 +1,17 @@
 .FileSystem{
+    padding: 20px;
     .nowPath{
-       padding: 20px;
+       padding: 0 20px;
+       background-color: orange;
+       position: relative;
+       .pathPannel{
+        position: absolute;
+        right: 10px;
+        top:0;
+        bottom: 0;
+        margin: auto;
+        cursor: pointer;
+       }
     }
     .content{
         width: 900px;
@@ -9,6 +20,8 @@
         padding: 20px;
         box-sizing: border-box;
         border: 1px solid #cccccc;
+        background-color: white;
+        color: black;
     }
     .item{
         height: 40px;
@@ -20,6 +33,9 @@
             background-color: #cccccc;
         }
     }
+    .onactive{
+        background-color: blue;
+    }
     .btns{
         width: 100%;
         display: flex;
@@ -28,11 +44,9 @@
         height: 50px;
     }
     .pathTab{
-        background-color: lightgreen;
-        margin-right: 5px;
         padding: 5px;
         &:hover{
-            opacity: 0.6;
+            color: blue;
         }
         cursor: pointer;
     }

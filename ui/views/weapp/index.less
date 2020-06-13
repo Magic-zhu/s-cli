@@ -3,20 +3,72 @@
     height: 100%;
     overflow: hidden;
     display: flex;
-    .body{
+    color: white;
+    .body {
         padding: 40px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .stepBar {
 
-    }
+    .stepBar {}
+
     .pannel {
         width: 100%;
-        display:flex;
+        display: flex;
         justify-content: space-between;
         padding: 0 40px;
+    }
+
+    .layout-left {
+        width: 50px;
+        background-color: #111111;
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .logo {
+            margin-top: 5px;
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .layout-right {
+        flex: 1;
+        background-color: rgba(0, 0, 0, 0.6);
+
+        header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .layout-bottom {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 30px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+    .importModule{
+        .title{
+            font-size: 24px;
+            text-align: center;
+        }
     }
 }

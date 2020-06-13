@@ -4,6 +4,7 @@ const { Step } = Steps;
 import './index.less';
 import FileSystem from "../../components/FileSystem/index";
 import TemplateSelector from "../../components/TemplateSelector/index";
+import weappImage from '../../assets/weapp.jpg';
 export default class WeApp extends Component {
     constructor(props) {
         super(props);
@@ -15,14 +16,14 @@ export default class WeApp extends Component {
                     name:'原生小程序基础模板',
                     value:'1'
                 },
-                {
-                    name:'敬请期待',
-                    value:'2'
-                },
-                {
-                    name:'敬请期待',
-                    value:'3'
-                },
+                // {
+                //     name:'敬请期待',
+                //     value:'2'
+                // },
+                // {
+                //     name:'敬请期待',
+                //     value:'3'
+                // },
             ],
         }
         this.navigate = this.navigate.bind(this);
@@ -40,10 +41,10 @@ export default class WeApp extends Component {
         this.setState({mode:'import_mode'})
     }
     selectTemplate(value){
+        value = parseInt(value);
         this.setState({
-            stepBarCurrent:1,
+            stepBarCurrent:value,
         })
-        console.log(value)
     }
     render() {
 
@@ -60,15 +61,16 @@ export default class WeApp extends Component {
 
         const ImportModule = (
             <div className='importModule'>
-
+                <div className='title'>选择导入的项目文件夹</div>
+                <FileSystem></FileSystem>
             </div>
         )
 
         return (
             <div className='weapp'>
                 <div className='layout-left'>
-                    <div>
-
+                    <div className='logo'>
+                        <img src={weappImage} />
                     </div>
                 </div>
                 <div className='layout-right'>
@@ -85,6 +87,7 @@ export default class WeApp extends Component {
                         {this.state.mode=='create_mode'&& CreateStepBar}
                         {this.state.mode=='create_mode' && this.state.stepBarCurrent == 0 && <TemplateSelector list={this.state.templates} onConfirm={this.selectTemplate} />}
                         {this.state.mode=='create_mode' && this.state.stepBarCurrent == 1 && <FileSystem></FileSystem>}
+                        {this.state.mode=='import_mode' && ImportModule}
                     </div>
                 </div>
                 <div className='layout-bottom'>
