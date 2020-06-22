@@ -3,6 +3,7 @@ import "./index.less";
 import WeappCli from '../../assets/weapp-cli.png';
 import D2 from "../../assets/d2.jpg";
 import Editor from '../../assets/microapp-editor.png';
+import chalk from 'chalk';
 export default class Home extends React.Component{
     constructor(props){
         super(props);
@@ -34,7 +35,7 @@ export default class Home extends React.Component{
         this.props.history.push(path)
     }
     componentDidMount(){
-
+        console.log(chalk.red('红色'))
     }
     render(){
         return (

@@ -1,5 +1,6 @@
 #!/usr/bin/env node --harmony
 const cmd = require('commander')
+const less = require('less');
 cmd
     .usage('<command>')
 cmd
@@ -14,7 +15,7 @@ cmd.command('create')
     .action(()=>{
 
     })
-cmd.command('create')
+cmd.command('test')
     .description('')
     .action(()=>{
         
