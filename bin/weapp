@@ -3,7 +3,7 @@ const cmd = require('commander')
 const message = require('../utils/message')
 const create = require('../command/weapp/create')
 const init = require('../command/weapp/init')
-const installPlugins = require('../command/weapp/plugins')
+const listPlugins = require('../command/weapp/plugins')
 cmd
     .usage('<command>')
 cmd
@@ -24,10 +24,10 @@ cmd
        init()
     })
 cmd
-    .command('install') 
-    .description('安装插件')
+    .command('list') 
+    .description('可安装插件列表')
     .action(()=>{
-        installPlugins()
+        listPlugins()
     })
 cmd
     .command('*', "无效")

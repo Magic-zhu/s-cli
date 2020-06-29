@@ -58,18 +58,6 @@ cmd
         require('../command/node')(type, arg);
     })
 cmd
-    .command('weapp <cmd> [arg]')
-    .description("微信小程序原生相关的脚手架命令")
-    .option("-s,--subpackage <subpackage>",'分包名字')
-    .option("-c,--component",'新建->组件')
-    .option("-p,--page",'新建->页面')
-    .option("--path <path>",'指定路径')
-    .action((type,arg,e)=>{
-        if(type=='init') require('../command/weapp/init')(arg)
-        if(type=='create') require('../command/weapp/create')(arg,e)
-        if(type=='plugins') require('../command/weapp/plugins')()
-    })
-cmd
     .command('ui')
     .description('脚手架的UI视图')
     .action(() => {
