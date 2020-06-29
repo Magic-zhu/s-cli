@@ -1,12 +1,12 @@
 {
   "name": "@magic-zhu/ares",
   "version": "1.1.2",
-  "description": "a simple cli,create project from templates",
+  "description": "a simple cli",
   "main": "bin/ares",
   "scripts": {
     "server:hot": "nodemon ./server/bin/www --port 8889",
     "ui": "parcel ./ui/index.html --port 8888",
-    "server":"node ./server/bin/www"
+    "server": "node ./server/bin/www"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,8 @@
     "http-errors": "~1.6.2",
     "inquirer": "^7.0.5",
     "jade": "^1.11.0",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.2.2",
     "morgan": "~1.9.0",
     "nunjucks": "^3.2.0",
     "ora": "^4.0.3",
@@ -54,6 +56,7 @@
   "bin": {
     "ares": "bin/ares",
     "ares-cli": "bin/ares-cli",
-    "weapp": "bin/weapp"
+    "weapp": "bin/weapp",
+    "d2": "bin/d2"
   }
 }

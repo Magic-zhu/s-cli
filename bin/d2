@@ -1,0 +1,23 @@
+#!/usr/bin/env node --harmony
+const cmd = require('commander')
+const less = require('less');
+cmd
+    .usage('<command>')
+cmd
+    .command('init')
+    .description('初始化项目')
+    .action(()=>{
+       	// require('../command/D2/list')
+       	console.log('haha')
+    })
+cmd.command('create')
+    .description('')
+    .action(()=>{
+
+    })
+cmd.command('test')
+    .description('')
+    .action(()=>{
+        
+    })    
+cmd.parse(process.argv)

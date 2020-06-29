@@ -12,6 +12,7 @@ cmd
     .option("-s,--subpackage <subpackage>",'分包名字')
     .option("-c,--component",'新建->组件')
     .option("-p,--page",'新建->页面')
+    .option("-v,--service",'新建服务')
     .option("--path <path>",'指定路径')
     .action((arg,e)=>{
         create(arg,e)

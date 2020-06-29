@@ -11,10 +11,11 @@ import D2 from "./views/D2/index";
 const App = ()=>(
     <BrowserRouter >
         <Switch>
-            <Route exact path='/' component={Home}></Route>
-            <Route exact path='/weapp' component={WeApp} ></Route>
-            <Route exact path='/weapp/config' component={WeAppConfig} ></Route>
-            <Route exact path='/d2' component={D2} ></Route>
+            <Route exact path='/' component={Home} exact></Route>
+            <Route exact path='/weapp' component={WeApp} exact></Route>
+            <Route exact path='/microapp-editor' component={WeApp} exact></Route>
+            <Route exact path='/weapp/config' component={WeAppConfig} exact></Route>
+            <Route exact path='/d2' component={D2} exact></Route>
         </Switch>
     </BrowserRouter >
 )
