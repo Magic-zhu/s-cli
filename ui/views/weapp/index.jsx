@@ -60,7 +60,7 @@ export default class WeApp extends Component {
 
         const ImportModule = (
             <div className='importModule'>
-
+				<FileSystem></FileSystem>
             </div>
         )
 
@@ -85,6 +85,7 @@ export default class WeApp extends Component {
                         {this.state.mode=='create_mode'&& CreateStepBar}
                         {this.state.mode=='create_mode' && this.state.stepBarCurrent == 0 && <TemplateSelector list={this.state.templates} onConfirm={this.selectTemplate} />}
                         {this.state.mode=='create_mode' && this.state.stepBarCurrent == 1 && <FileSystem></FileSystem>}
+						{this.state.mode=='import_mode' && ImportModule}
                     </div>
                 </div>
                 <div className='layout-bottom'>
