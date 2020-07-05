@@ -12,7 +12,7 @@ Ares是一个简单的脚手架,主要是为了解决每次创建项目时都要
 
 目前支持三个版块
 
-1. vue
+1. D2(超级好用的中后台模板) 👉<a href='#d2'>跳转</a>  [官网](https://d2.pub/zh/doc/d2-admin/)
 2. 微信小程序 👉<a href='#weapp'>跳转</a>
 3. 快捷工具
 
@@ -27,7 +27,7 @@ npm install @magic-zhu/ares -g
 
 ## 使用
 
-### 🚀 小工具部分
+### 🚀 快捷工具
 
 `切换npm镜像源`
 ```shell
@@ -43,31 +43,20 @@ ares npm
 + `ares node install <version>`:不带版本的时候安装最新稳定版本的node,带版本的时候安装指定版本的node
 + `ares node use`:会出现一个列表 选择想要使用的版本按回车即可
 
-### 🔥 选择模版初始化项目
+<div id='d2'></div>
 
-```bash
-ares init
-```
-![image](assets/ares_init.png)
-
-### ✈️ D2Admin部分
-
-D2部分所有的命令都是以`ares d2`开头
+## ✈️ D2Admin
 
 #### 创建项目
 
-:exclamation:快速创建D2的简单模板
-```shell
-ares d2 create 
+:exclamation:快速创建D2
+d2 init 
 ```
-:exclamation:快速创建D2的完整模板
-```shell
-ares d2 create -c
-```
+
 ##### 新增页面
 
 ```shell
-ares d2 add 
+d2 add 
 ```
 
 ##### 主题生成
@@ -79,22 +68,22 @@ ares d2 theme
 ```
 <div id='weapp'></div>
 
-###  🍀原生微信小程序
+##  🍀原生微信小程序
 
 >原生微信小程序部分所有的命令都是以`ares weapp`开头
 
-🍀命令需要在小程序项目根目录下执行 (app.json同级目录)
+⚠命令需要在小程序项目根目录下执行 (app.json同级目录)
 
-#### 新建页面
+### 新建页面
 
 >脚手架会自动注册路由
 
 ```bash
-ares weapp create <name> --page 
-ares weapp create <name> -p //--page的简写
-ares weapp create <name> --page  --subpackage
-ares weapp create <name> -p -s
-ares weapp create <name> -p -s <subpackageName> --path <path>
+weapp create <name> --page 
+weapp create <name> -p //--page的简写
+weapp create <name> --page  --subpackage
+weapp create <name> -p -s
+weapp create <name> -p -s <subpackageName> --path <path>
 ```
 >-p可以省略
 
@@ -105,12 +94,12 @@ ares weapp create <name> -p -s <subpackageName> --path <path>
 
 **🍀示例**
 
-+ `ares weapp create demo` 最简单的示例  默认创建在 /pages/demo 这个目录下面
-+ `ares weapp create textPage --path /pages/testModule` 创建在 /pages/testModule/testPage 
-+ `ares weapp create hero -s packageA` 默认创建在 /packageA/pages/hero  
-+ `ares weapp create hero -s packageA --path /pages/testModule ` 创建在/packageA/pages/testModule/hero
++ `weapp create demo` 最简单的示例  默认创建在 /pages/demo 这个目录下面
++ `weapp create textPage --path /pages/testModule` 创建在 /pages/testModule/testPage 
++ `weapp create hero -s packageA` 默认创建在 /packageA/pages/hero  
++ `weapp create hero -s packageA --path /pages/testModule ` 创建在/packageA/pages/testModule/hero
 
-#### 新建组件
+### 新建组件
 
 大体上和新建页面类似
 
@@ -121,7 +110,9 @@ ares weapp create <name> -c
 ares weapp create <name> --component
 ares weapp create <name> -c --path <path>
 ```
-#### 安装脚手架提供的组件
+### 安装脚手架提供的组件(magic-ui-weapp)
+
+脚手架带了一套方便修改源码的组件库具体请查看 👉[文档]()
 
 ```bash
 ares weapp plugins
