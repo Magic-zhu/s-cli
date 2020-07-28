@@ -8,5 +8,7 @@ module.exports = function (name) {
     Shell(sh)
     .subscribe(()=>{
         message.success('初始化成功')
+    },(err)=>{
+        message.error(err)
     })
 }

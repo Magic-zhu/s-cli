@@ -4,36 +4,9 @@ const cmd = require('commander')
 const chalk = require('chalk')
 const message = require('../utils/message')
 cmd
-    .version('1.1.2')
+    .version('1.1.3')
 cmd
     .usage('<command>')
-cmd
-    .command('init')
-    .description('选择模板 初始化项目')
-    .alias("i")
-    .option("-t, --template <number>", "指定模板编号")
-    .action(() => {
-        message.info('正在加载模板')
-        require('../command/init')()
-    })
-cmd
-    .command('build <path>')
-cmd
-    .command('plugin')
-    .description('选择需要克隆的插件或者组件')
-    .alias('p')
-    .option("--path <path>", '指定路径')
-    .option("--list")
-    .action((e) => {
-        let type = 'normal';
-        let arg = null;
-        if (e.list) type = 'list';
-        if (e.path) {
-            type = 'path';
-            arg = e.path;
-        }
-        require('../command/plugin')(type, arg)
-    })
 cmd
     .command('d2 <cmd> [arg]')
     .description("D2Admin相关的脚手架命令")
