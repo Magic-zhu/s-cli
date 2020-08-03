@@ -12,27 +12,11 @@ class Editor extends React.Component {
     init() {
         const container = document.getElementById('paper');
         console.log(container)
-        const scene = new Scene({ container, width: 3080, height: 1080 });
-        const layer = scene.layer();
-        const robot = new Sprite('https://p5.ssl.qhimg.com/t01c33383c0e168c3c4.png');
-
-        robot.attr({
-            anchor: [0, 0.5],
-            pos: [0, 0],
-        });
-
-        robot.animate([
-            { pos: [0, 0] },
-            { pos: [0, 300] },
-            { pos: [2700, 300] },
-            { pos: [2700, 0] },
-        ], {
-            duration: 5000,
-            iterations: Infinity,
-            direction: 'alternate',
-        });
-
-        layer.append(robot);    
+        const scene = new Scene({ container, width: 750, height: 1440 });
+        const layer = scene.layer();   
+    }
+    updateBackground(){
+        
     }
     render() {
         return (
