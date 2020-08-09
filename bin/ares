@@ -37,6 +37,12 @@ cmd
         require('../command/ui')()
     })
 cmd
+    .command('scan <path>')
+    .description('psd文件扫描')
+    .action((path)=>{
+       require('../command/scan')(path)
+    })
+cmd
     .command('test')
     .action(() => {
         require('../command/test')();
