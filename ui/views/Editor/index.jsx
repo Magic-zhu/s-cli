@@ -1,7 +1,9 @@
 import React from "react";
 import "./index.less";
 import * as spritejs from 'spritejs';
-const { Scene, Sprite } = spritejs;
+const { Scene, Sprite ,Group} = spritejs;
+import { install } from 'next-draggable'
+install(spritejs);
 class Editor extends React.Component {
     constructor(props) {
         super(props)
@@ -11,9 +13,46 @@ class Editor extends React.Component {
     }
     init() {
         const container = document.getElementById('paper');
-        console.log(container)
-        const scene = new Scene({ container, width: 750, height: 1440 });
-        const layer = scene.layer();   
+        const scene = new Scene({ container, width: 375, height: 720 });
+        const layer = scene.layer();
+        let group = new Group();
+        group.attr({
+            size: [100, 100],
+            pos: [50, 50],
+            anchor: [0.5, 0.5],
+            bgcolor: '#cec',
+            zIndex:5,
+          });
+        group.draggable();
+        group.addEventListener('drag', (evt) => {
+            group.getAttribute('pos')[0]
+        });
+        let group2 = new Group();
+        group2.attr({
+            size: [100, 100],
+            pos: [150, 50],
+            anchor: [0.5, 0.5],
+            bgcolor: '#ff00ff',
+            zIndex:5,
+        });
+        group2.draggable();
+        group2.addEventListener('drag', (evt) => {
+            group2.getAttribute('pos')[0]
+        });
+        layer.append(group);   
+        layer.append(group2);
+        group.addEventListener('mouseenter', (evt) => {
+            group.attr('border', [2, 'blue']);
+        });
+        group2.addEventListener('mouseenter', (evt) => {
+            group2.attr('border', [2, 'blue']);
+        });
+        group.addEventListener('mouseleave', (evt) => {
+            group.attr('border', [0]);
+        });        
+        group2.addEventListener('mouseleave', (evt) => {
+            group2.attr('border', [0]);
+        });
     }
     updateBackground(){
         const vertex =`

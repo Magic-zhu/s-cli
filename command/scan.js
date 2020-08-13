@@ -12,11 +12,9 @@ module.exports=function(filePath){
         return 
     }
     message.info('psd文件解析中...')
-    const psd = PSD.fromFile(filePath);
-    psd.parse();
-    let arr = psd.tree().export();
-    Writer('/Users/alex/Downloads/19306/test.json',JSON.stringify(arr))
-    .subscribe(()=>{
-        message.success('导出成功')
+    PSD.open(filePath).then(psd=>{
+        for (let i = 0; i < psd.layers.length; i++) {
+            psd.layers[i].image.saveAsPng('/Volumes/code/' + 'output'+i + '.png')
+        }
     })
 }

@@ -39,6 +39,7 @@
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "morgan": "~1.9.0",
+    "next-draggable": "0.0.6",
     "nunjucks": "^3.2.0",
     "ora": "^4.0.3",
     "psd": "^3.2.0",
