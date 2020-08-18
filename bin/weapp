@@ -14,7 +14,7 @@ cmd
     .option("-p,--page",'新建->页面')
     .option("-v,--service",'新建服务')
     .option("--path <path>",'指定路径')
-    .option("--no",'不注册路由')
+    .option("--vs",'配合vscode插件用')
     .action((arg,e)=>{
         create(arg,e)
     })

@@ -73,11 +73,17 @@ module.exports = function (name, e) {
 
     let generate_path;
 
+    if(e.vs){
+        createNewPage(e.path)
+        return 
+    }
+
     if (e.component) {
         generate_path = e.path ? path.resolve("./") + e.path + "/" + name : path.resolve("./") + "/components/" + name;
         createNewComponent(generate_path)
         return
     }
+
     if (e.service) {
         generate_path = e.path ? path.join(path.resolve("./"), e.path, name + '.js') : path.join(path.resolve("./"), 'services', name + '.js');
         console.log(generate_path)
@@ -92,10 +98,6 @@ module.exports = function (name, e) {
     }
 
     createNewPage(generate_path)
-
-    if(e.no){
-        return 
-    }
     
     registerRoute({ name, path: e.path, subpackage: e.subpackage })
 }
