@@ -29,13 +29,14 @@ class Editor extends React.Component {
         });
         let group2 = new Group();
         group2.attr({
-            size: [100, 100],
-            pos: [150, 50],
+            size: [200, 200],
+            pos: [100, 50],
             anchor: [0.5, 0.5],
             bgcolor: '#ff00ff',
-            zIndex:5,
+            zIndex:3,
         });
-        group2.draggable();
+        // group2.draggable();
+        group2.droppable();
         group2.addEventListener('drag', (evt) => {
             group2.getAttribute('pos')[0]
         });
@@ -44,15 +45,12 @@ class Editor extends React.Component {
         group.addEventListener('mouseenter', (evt) => {
             group.attr('border', [2, 'blue']);
         });
-        group2.addEventListener('mouseenter', (evt) => {
-            group2.attr('border', [2, 'blue']);
-        });
         group.addEventListener('mouseleave', (evt) => {
             group.attr('border', [0]);
         });        
-        group2.addEventListener('mouseleave', (evt) => {
-            group2.attr('border', [0]);
-        });
+        group2.addEventListener('drop',(evt)=>{
+            group.setAttribute('pos',[50,50])
+        })
     }
     updateBackground(){
         const vertex =`

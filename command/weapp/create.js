@@ -93,5 +93,9 @@ module.exports = function (name, e) {
 
     createNewPage(generate_path)
 
+    if(e.no){
+        return 
+    }
+    
     registerRoute({ name, path: e.path, subpackage: e.subpackage })
 }

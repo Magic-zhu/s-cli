@@ -1,7 +1,7 @@
 # 介绍 (💦开发中)
 ![image](assets/Ares.png)
 
-![image](https://img.shields.io/badge/Version-1.1.2-green.svg)  ![image](https://img.shields.io/badge/node->10-red.svg)
+![image](https://img.shields.io/badge/Version-1.1.4-green.svg)  ![image](https://img.shields.io/badge/node->10-red.svg)
 
 Ares是一个简单的脚手架,主要是为了解决每次创建项目时都要copy代码，配置插件等繁琐的工作。<br>
 
