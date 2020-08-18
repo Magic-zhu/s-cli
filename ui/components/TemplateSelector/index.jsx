@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./index.less";
-import { Radio ,Button} from 'antd';
+import { Radio ,Button,message} from 'antd';
 
 export default class TemplateSelector extends Component {
     constructor(props){
@@ -17,6 +17,10 @@ export default class TemplateSelector extends Component {
         })
     }
     confirm(){
+        if(this.state.value==''){
+            message.error('请选择一项');
+            return
+        }
         this.props.onConfirm(this.state.value)
     }
     render() {

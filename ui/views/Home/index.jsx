@@ -1,24 +1,31 @@
 import React from "react";
 import "./index.less";
-import Weapp from '../../assets/weapp.jpg';
+import WeappCli from '../../assets/weapp-cli.png';
 import D2 from "../../assets/d2.jpg";
-
+import Editor from '../../assets/microapp-editor.png';
+import chalk from 'chalk';
 export default class Home extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             Menus :[
                 {
-                    coverImg:Weapp,
-                    title:"微信小程序",
+                    coverImg:WeappCli,
+                    title:"微信小程序脚手架",
                     path:"/weapp",
                     id:1,
                 },
                 {
                     coverImg:D2,
-                    title:"D2Admin",
+                    title:"D2Admin脚手架",
                     path:"/d2",
                     id:2,
+                },
+                {
+                    coverImg:Editor,
+                    title:"小程序可视化编辑器",
+                    path:"/microapp-editor",
+                    id:3, 
                 }
             ]
         }
@@ -26,6 +33,9 @@ export default class Home extends React.Component{
     }
     navigate(path){
         this.props.history.push(path)
+    }
+    componentDidMount(){
+        console.log(chalk.red('红色'))
     }
     render(){
         return (

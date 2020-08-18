@@ -1,0 +1,38 @@
+#!/usr/bin/env node --harmony
+const cmd = require('commander')
+const message = require('../utils/message')
+const create = require('../command/weapp/create')
+const init = require('../command/weapp/init')
+const listPlugins = require('../command/weapp/plugins')
+cmd
+    .usage('<command>')
+cmd
+    .command('create')
+    .description('创建一个页面/或者组件')
+    .option("-s,--subpackage <subpackage>",'分包名字')
+    .option("-c,--component",'新建->组件')
+    .option("-p,--page",'新建->页面')
+    .option("-v,--service",'新建服务')
+    .option("--path <path>",'指定路径')
+    .option("--no",'不注册路由')
+    .action((arg,e)=>{
+        create(arg,e)
+    })
+cmd
+    .command('init')
+    .description('初始化项目')
+    .action(()=>{
+       init()
+    })
+cmd
+    .command('list') 
+    .description('可安装插件列表')
+    .action(()=>{
+        listPlugins()
+    })
+cmd
+    .command('*', "无效")
+    .action(function (env) {
+        console.log(message.error('无效命令'));
+    });    
+cmd.parse(process.argv)

@@ -25,9 +25,9 @@ export default class WeApp extends Component {
                 },
             ],
         }
-        this.navigate.bind(this);
-        this.createProject.bind(this);
-        this.importProject.bind(this);
+        this.navigate = this.navigate.bind(this);
+        this.createProject = this.createProject.bind(this);
+        this.importProject = this.importProject.bind(this);
         this.selectTemplate = this.selectTemplate.bind(this);
     }
     navigate() {
@@ -37,7 +37,7 @@ export default class WeApp extends Component {
         this.setState({mode:'create_mode'})
     }
     importProject(){
-
+        this.setState({mode:'import_mode'})
     }
     selectTemplate(value){
         this.setState({
@@ -58,6 +58,12 @@ export default class WeApp extends Component {
             </div>
         );
 
+        const ImportModule = (
+            <div className='importModule'>
+				<FileSystem></FileSystem>
+            </div>
+        )
+
         return (
             <div className='weapp'>
                 <div className='layout-left'>
@@ -71,7 +77,7 @@ export default class WeApp extends Component {
                             <div></div>
                             <div>
                                 <Button type='primary' className={'mr20'} icon={'thunderbolt'} onClick={()=>{this.createProject()}}>新建项目</Button>
-                                <Button type='primary' className={'mr20'} icon={'import'} onClick={()=>{this.createProject()}}>导入项目</Button>
+                                <Button type='primary' className={'mr20'} icon={'import'} onClick={()=>{this.importProject()}}>导入项目</Button>
                             </div> 
                         </div>
                     </header>
@@ -79,6 +85,7 @@ export default class WeApp extends Component {
                         {this.state.mode=='create_mode'&& CreateStepBar}
                         {this.state.mode=='create_mode' && this.state.stepBarCurrent == 0 && <TemplateSelector list={this.state.templates} onConfirm={this.selectTemplate} />}
                         {this.state.mode=='create_mode' && this.state.stepBarCurrent == 1 && <FileSystem></FileSystem>}
+						{this.state.mode=='import_mode' && ImportModule}
                     </div>
                 </div>
                 <div className='layout-bottom'>

@@ -1,14 +1,15 @@
-@import '~antd/dist/antd.less';
 
-@primary-color: rgb(63, 167, 178); // 全局主色
+@import '~antd/lib/style/themes/default.less';
+@import '~antd/dist/antd.less';
+@primary-color: #66CCFF ; // 全局主色
 @link-color: rgb(63, 167, 178); // 链接色
 @success-color: #52c41a; // 成功色
 @warning-color: #faad14; // 警告色
 @error-color: #f5222d; // 错误色
 @font-size-base: 14px; // 主字号
-@heading-color: rgba(0, 0, 0, 0.85); // 标题色
-@text-color: rgba(0, 0, 0, 0.65); // 主文本色
-@text-color-secondary : rgba(0, 0, 0, .45); // 次文本色
+@heading-color: orange; // 标题色
+@text-color: #000000; // 主文本色
+@text-color-secondary : rgb(253, 202, 107); // 次文本色
 @disabled-color : rgba(0, 0, 0, .25); // 失效色
 @border-radius-base: 4px; // 组件/浮层圆角
 @border-color-base: #d9d9d9; // 边框色
@@ -40,35 +41,3 @@ body,html,#app{
     margin-bottom: 20px;
 }
 
-.layout-left {
-        width: 50px;
-        background-color: rgba(63, 167, 178,0.6);
-        div{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-        }
-}
-.layout-right{
-    flex:1;
-    background-color:rgba(63, 167, 178,0.05);
-    header{
-        height: 80px;
-        display: flex;
-        align-items: center;
-    }   
-}
-.layout-bottom {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    height: 30px;
-    background-color: rgba(49, 178, 192,0.8);
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0 40px;
-    box-sizing: border-box;
-}

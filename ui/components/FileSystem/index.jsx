@@ -9,16 +9,18 @@ export default class FileSystem extends Component {
             fileList: [],
             nowPath: "",
             pathArray: [],//路径数组
+			selectIndex:null
         };
     }
     componentDidMount() {
         this.getFileTree("/")
     }
     getFileTree(path) {
-        axios.post('http://localhost:4066/getFileTree', { path }).then(res => {
+        axios.post('http://localhost:8889/getFileTree', { path }).then(res => {
             this.setState({
                 fileList: res.data,
                 nowPath: path === "/" ? "" : path,
+				selectIndex:null
             });
         })
     }
@@ -76,8 +78,21 @@ export default class FileSystem extends Component {
         })
         this.getFileTree("/")
     }
+	
+	select(index){
+		this.setState({
+			selectIndex:index
+		})
+	}
 
+	choose(){
+		
+	}
+	
     render() {
+		const selectStyle ={
+			backgroundColor:'#eeeeee'
+		}
         return (
             <div className={'FileSystem'}>
                 <div className="nowPath">
@@ -99,6 +114,8 @@ export default class FileSystem extends Component {
                             <div
                                 key={item.name + index} className='item'
                                 onDoubleClick={() => { this.chooseFolder(item.dir, item.name) }}
+								onClick={()=>{this.select(index)}}
+								style={this.state.selectIndex==index?selectStyle:null}
                             >
                                 {item.dir ? <Icon type="folder" theme="twoTone" /> : <Icon type="file" />}
                                 {"  "}
@@ -109,7 +126,7 @@ export default class FileSystem extends Component {
                 </div>
                 <div className='btns'>
                     <Button type='default' onClick={() => { this.back() }} className='mr20'>返回</Button>
-                    <Button type='primary'>选择</Button>
+                    <Button type='primary' onClick={()=>{this.choose()}}>选择</Button>
                 </div>
             </div>
         )

@@ -4,36 +4,9 @@ const cmd = require('commander')
 const chalk = require('chalk')
 const message = require('../utils/message')
 cmd
-    .version('1.1.1')
+    .version('1.1.3')
 cmd
     .usage('<command>')
-cmd
-    .command('init')
-    .description('选择模板 初始化项目')
-    .alias("i")
-    .option("-t, --template <number>", "指定模板编号")
-    .action(() => {
-        message.info('正在加载模板')
-        require('../command/init')()
-    })
-cmd
-    .command('build <path>')
-cmd
-    .command('plugin')
-    .description('选择需要克隆的插件或者组件')
-    .alias('p')
-    .option("--path <path>", '指定路径')
-    .option("--list")
-    .action((e) => {
-        let type = 'normal';
-        let arg = null;
-        if (e.list) type = 'list';
-        if (e.path) {
-            type = 'path';
-            arg = e.path;
-        }
-        require('../command/plugin')(type, arg)
-    })
 cmd
     .command('d2 <cmd> [arg]')
     .description("D2Admin相关的脚手架命令")
@@ -58,22 +31,16 @@ cmd
         require('../command/node')(type, arg);
     })
 cmd
-    .command('weapp <cmd> [arg]')
-    .description("微信小程序原生相关的脚手架命令")
-    .option("-s,--subpackage <subpackage>",'分包名字')
-    .option("-c,--component",'新建->组件')
-    .option("-p,--page",'新建->页面')
-    .option("--path <path>",'指定路径')
-    .action((type,arg,e)=>{
-        if(type=='init') require('../command/weapp/init')(arg)
-        if(type=='create') require('../command/weapp/create')(arg,e)
-        if(type=='plugins') require('../command/weapp/plugins')()
-    })
-cmd
     .command('ui')
     .description('脚手架的UI视图')
     .action(() => {
         require('../command/ui')()
+    })
+cmd
+    .command('scan <path>')
+    .description('psd文件扫描')
+    .action((path)=>{
+       require('../command/scan')(path)
     })
 cmd
     .command('test')
